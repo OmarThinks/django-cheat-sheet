@@ -29,5 +29,51 @@ To close the server : **`ctrl`** + **`c`**.
 
 
 
+## 2) views and urls:
+
+
+
+<b>
+	
+
+
+`views.py`
+```python
+from django.http import HttpResponse
+
+def about(request):
+	return HttpResponse("About")
+
+def homepage(request):
+	return HttpResponse("Home Page")
+```
+
+
+
+
+
+`urls.py`
+```python
+from django.contrib import admin
+from django.urls import path
+from .views import (about, homepage)
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('about/', about),
+    path('', homepage)
+]
+```
+
+
+
+
+
+</b>
+
+
+
+
+
 
 
