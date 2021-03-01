@@ -60,17 +60,32 @@ from .views import (about, homepage)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', homepage),
     path('about/', about),
-    path('', homepage)
 ]
 ```
 
-
-
-
-
 </b>
 
+
+
+In the browser open these links:
+
+<b>
+
+<a href="http://127.0.0.1:8000" target="_blank">
+http://127.0.0.1:8000</a>
+<br>
+<a href="http://127.0.0.1:8000/about" target="_blank">
+http://127.0.0.1:8000/about</a>
+<br>
+
+<a href="http://127.0.0.1:8000/admin" target="_blank">
+http://127.0.0.1:8000/admin</a>
+
+
+
+</b>  
 
 
 

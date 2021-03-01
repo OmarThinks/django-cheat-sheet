@@ -19,6 +19,6 @@ from .views import (about, homepage)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', homepage),
     path('about/', about),
-    path('', homepage)
 ]
