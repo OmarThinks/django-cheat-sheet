@@ -109,7 +109,60 @@ http://127.0.0.1:8000/admin</a>
 
 
 
-## 3) Django Apps:
+## 3) HTML Templates:
+
+
+
+
+<b>
+	
+
+
+`templates/home.html`
+```html
+This is home template, Welcome my freind.
+```
+
+
+`simpleApp/views.py`
+```python
+from django.http import HttpResponse
+from django.shortcuts import render
+
+def homepage(request):
+	#return HttpResponse("Home Page")
+	return render(request, "home.html")
+```
+
+
+
+
+
+`simpleApp/urls.py`
+```python
+from django.contrib import admin
+from django.urls import path
+from .views import (homepage)
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', homepage),
+]
+```
+
+
+`simpleApp/settings.py`
+```python
+TEMPLATES = [
+    { 'DIRS': ["templates"], },
+]
+```
+
+</b>
+
+
+
+
 
 
 
