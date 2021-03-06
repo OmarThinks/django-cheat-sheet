@@ -1,5 +1,17 @@
 # django-cheat-sheet
 
+<b>
+
+```bash
+pip install django
+django-admin startproject <app name> # Create a django app
+cd <app name> # Get to the directory
+python manage.py runserver
+```
+
+</b>
+
+
 
 ## 1) Create application:
 
