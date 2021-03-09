@@ -200,7 +200,7 @@ TEMPLATES = [
 
 
 
-
+<b>
 
 ```bash
 python manage.py startapp <new app name>
@@ -211,9 +211,75 @@ python manage.py startapp <new app name>
 python manage.py startapp articles
 ```
 
+</b>
+
+This comman will create a folder called `articles` and fill it
+with files.  
+This is a new sub application inside your big application.
 
 
 
+
+<b>
+
+`articles/templates/articles/articles_list.html`
+```html
+Articles list are here
+```
+
+
+`articles/views.py`
+```python
+from django.shortcuts import render
+
+def articles_list_page(request):
+	return render(request, "articles/articles_list.html")
+```
+
+
+
+`articles/urls.py`
+```python
+from django.urls import path
+from .views import (articles_list_page)
+
+urlpatterns = [
+    path('', articles_list_page),
+]
+```
+
+
+
+
+`sampleApp/settings.py`
+```python
+INSTALLED_APPS = [
+    ...,
+    "articles",
+    # We just added the articles application
+]
+```
+
+
+`sampleApp/urls.py`
+```python
+from django.contrib import admin
+from django.urls import (path, include)
+
+urlpatterns = [
+    path('', homepage),
+    path('articles/',include("articles.urls")),
+    # We just added the articles app urls
+]
+```
+
+
+
+
+
+
+
+</b>
 
 
 
