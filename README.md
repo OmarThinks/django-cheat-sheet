@@ -201,6 +201,17 @@ TEMPLATES = [
 
 
 
+```bash
+python manage.py startapp <new app name>
+```
+
+
+```bash
+python manage.py startapp articles
+```
+
+
+
 
 
 
