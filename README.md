@@ -7,6 +7,7 @@ pip install django
 django-admin startproject <app name> # Create a django app
 cd <app name> # Get to the directory
 python manage.py runserver
+python manage.py startapp <new app name>
 ```
 
 </b>
