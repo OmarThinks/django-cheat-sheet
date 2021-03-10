@@ -600,3 +600,71 @@ You will be able to see the style file.
 
 
 
+
+
+## 11) Extending templates:
+
+
+
+
+
+<b>
+
+`templates/base_layout.py`
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<div class="wrapper">
+		{% block content %}
+		{% endblock %}
+	</div>
+
+	<hr>
+	All inside the block
+</body>
+</html>
+```
+
+
+`articles/articles_list.html`
+```html
+{% extends 'base_layout.html' %}
+{% block content %}
+
+	<div class="aricles">
+	{% for article in articles %}
+		<div class="aricle">
+			<h1>{{ article.title }}</h1>
+			<p>{{ article.slug }}, {{ article.date }}</p>
+			<p>{{ article.body }}</p>
+			<hr>
+		</div>
+
+	{% endfor %}
+	</div>
+
+{% endblock %}
+```
+
+
+</b>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
