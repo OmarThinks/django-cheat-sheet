@@ -1,1 +1,11 @@
-Articles list are here
+<div class="aricles">
+{% for article in articles %}
+	<div class="aricle">
+		<h1>{{ article.title }}</h1>
+		<p>{{ article.slug }}, {{ article.date }}</p>
+		<p>{{ article.body }}</p>
+		<hr>
+	</div>
+
+{% endfor %}
+</div>
