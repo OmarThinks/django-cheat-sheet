@@ -665,6 +665,38 @@ You will be able to see the style file.
 
 
 
+## 12) url Parameters:
+
+
+
+
+<b>
+
+`articles/views.py`
+```python
+from django.http import HttpResponse
+
+def article_page(request,id):
+	return HttpResponse(id)
+```
+
+
+`articles/urls.py`
+```python
+from django.urls import path
+from .views import article_page
+
+urlpatterns = [
+    path('<int:id>', article_page),
+]
+```
+
+
+</b>
+
+
+
+
 
 
 
