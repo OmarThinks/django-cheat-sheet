@@ -699,9 +699,6 @@ urlpatterns = [
 
 ## 13) url names:
 
-
-
-
 <b>
 
 `articles/urls.py`
@@ -716,9 +713,42 @@ urlpatterns = [
 
 </b>
 
-
-
 Now we can redirect to this page using : `aricles:specific`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 14) Accounts:
+
+<b>
+
+```bash
+python manage.py startapp accounts
+```
+
+</b>
+
+
+
+
 
 
 
