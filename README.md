@@ -8,6 +8,10 @@ django-admin startproject <app name> # Create a django app
 cd <app name> # Get to the directory
 python manage.py runserver
 python manage.py startapp <new app name>
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+winpty python manage.py createsuperuser #Windows
 ```
 
 </b>
@@ -375,6 +379,96 @@ print(a.title) # ABC
 
 </b>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 8) Admin:
+
+
+
+<b>
+
+`sampleApp/urls.py`
+```python
+from django.contrib import admin
+from django.urls import (path)
+
+urlpatterns = [
+	...,
+    path('admin/', admin.site.urls),
+]
+```
+
+
+```bash
+python manage.py createsuperuser
+winpty python manage.py createsuperuser #Windows
+```
+
+
+</b>
+
+
+username: omar  
+password: 123
+
+
+
+
+
+
+
+
+
+
+<b>
+
+`articles/admin.py`
+```python
+from django.contrib import admin
+from .models import Article
+
+admin.site.register(Article)
+```
+
+</b>
+
+So now, when we open the admin area on the browser, it will 
+show the articles.
+
+
+
+
+
+
+
+<b>
+
+`articles/models.py`
+```python
+from django.db import models
+
+class Article(models.Model):
+	...,
+
+	def __str__(self):
+		return self.title
+```
+
+</b>
+
+This is how you control how each instace is represented in the
+admin area.
 
 
 

@@ -12,3 +12,6 @@ class Article(models.Model):
 	# set to now
 	# Add author later
 	# Add thumbnail later
+	
+	def __str__(self):
+		return self.title
