@@ -480,3 +480,49 @@ admin area.
 
 
 
+## 9) Template tags:
+
+<b>
+
+`articles/views.py`
+```python
+from django.shortcuts import render
+from .models import Article
+
+def articles_list_page(request):
+	articles = Article.objects.all().order_by("id")
+	return render(request, "articles/articles_list.html",
+		{"articles":articles})
+```
+
+</b>
+
+To pass the data to the template.
+
+
+
+<b>
+
+`articles/templates/articles_list.html`
+```html
+<div class="aricles">
+{% for article in articles %}
+	<div class="aricle">
+		<h1>{{ article.title }}</h1>
+		<p>{{ article.slug }}, {{ article.date }}</p>
+		<p>{{ article.body }}</p>
+		<hr>
+	</div>
+
+{% endfor %}
+</div>
+```
+
+</b>
+
+To display passed data.
+
+
+
+
+
