@@ -526,3 +526,77 @@ To display passed data.
 
 
 
+
+
+
+
+
+
+
+
+
+
+## 10) Static files:
+
+<b>
+
+`assets/styles.css`
+```python
+STATIC_URL = '/static/'
+
+import os
+
+STATICFILES_DIRS = (
+os.path.join(BASE_DIR, "assets"),
+)
+```
+</b>
+
+
+
+<b>
+
+`sampleApp/settings.py`
+```python
+STATIC_URL = '/static/'
+
+import os
+
+STATICFILES_DIRS = (
+os.path.join(BASE_DIR, "assets")
+)
+```
+
+</b>
+
+
+
+<b>
+
+`sampleApp/urls.py`
+```python
+from django.contrib.staticfiles.urls import (
+    staticfiles_urlpatterns)
+
+urlpatterns = [ # url patterns like normal
+]
+
+urlpatterns += staticfiles_urlpatterns()
+```
+
+</b>
+
+
+
+
+
+Now, in the browser, open this links:
+<a href="http://127.0.0.1:8000/static/style.css">
+http://127.0.0.1:8000/static/style.css</a>.  
+You will be able to see the style file.
+
+
+
+
+
+
