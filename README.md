@@ -697,6 +697,33 @@ urlpatterns = [
 
 
 
+## 13) url names:
+
+
+
+
+<b>
+
+`articles/urls.py`
+```python
+from django.urls import path
+from .views import article_page
+
+urlpatterns = [
+    path('<int:id>', article_page, name="specific"),
+]
+```
+
+</b>
+
+
+
+Now we can redirect to this page using : `aricles:specific`.
+
+
+
+
+
 
 
 
