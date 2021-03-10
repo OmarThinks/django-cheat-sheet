@@ -296,7 +296,7 @@ urlpatterns = [
 <b>
 
 `articles/models.py`
-```bash
+```python
 from django.db import models
 
 class Article(models.Model):
@@ -317,6 +317,36 @@ class Article(models.Model):
 
 
 
+
+
+
+
+
+
+
+
+## 6) Migrations:
+
+
+
+<b>
+
+`articles/models.py`
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+</b>
+
+
+- `makemigrations`: This will create the migrations files
+- `migrate`: This will reflect the migration files 
+to the data base
+
+
+- Every time you make changes to your models, you should run these 2
+lines of code.
 
 
 
