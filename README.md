@@ -736,19 +736,6 @@ Now we can redirect to this page using : `aricles:specific`.
 
 
 
-## 14) Accounts:
-
-<b>
-
-```bash
-python manage.py startapp accounts
-```
-
-</b>
-
-
-
-
 
 
 
