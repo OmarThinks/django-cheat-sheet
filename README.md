@@ -357,5 +357,32 @@ lines of code.
 
 
 
+## 7) ORM:
+
+
+
+<b>
+
+```python
+from articles.models import Article
+
+article = Article()
+article.title = "ABC"
+article.save() # This will save the article to the database
+a = Article.objects.all()[0]
+print(a.title) # ABC
+```
+
+</b>
+
+
+
+
+
+
+
+
+
+
 
 
