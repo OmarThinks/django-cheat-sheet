@@ -42,10 +42,6 @@ python manage.py runserver
 ```
 
 
-</b>
-
-
-
 
 
 
