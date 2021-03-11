@@ -59,6 +59,7 @@ python manage.py runserver
 
 ```bash
 python manage.py startapp products
+python manage.py startapp api
 ```
 
 
