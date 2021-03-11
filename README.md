@@ -10,7 +10,7 @@
 
 <h2>
 	<a href="lessons/2_rest/README.md">
-		2) Django REST Framework
+		2) Django Ninja
 	</a>
 </h2>
 

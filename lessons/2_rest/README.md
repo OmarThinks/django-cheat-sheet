@@ -1,4 +1,4 @@
-# 2) Django REST Framework
+# 2) Django Ninja
 
 
 
