@@ -45,3 +45,42 @@ python manage.py runserver
 
 
 
+
+
+
+
+
+
+## 2) Create a sub app with it's model:
+
+
+<b>
+
+
+```bash
+python manage.py startapp products
+```
+
+
+</b>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
