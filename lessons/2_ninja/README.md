@@ -146,6 +146,59 @@ def get_operation(request):
 
 
 
+## 4) Path Parameters:
+
+
+### 4-1) Normal path parameter:
+
+<b>
+
+```python
+@api.get("/items/{item_id}")
+def read_item(request, item_id):
+    return {"item_id": item_id}
+```
+
+</b>
+
+### 4-2) Path parameter with specific data type:
+
+<b>
+
+```python
+@api.get("/items/{item_id}")
+def read_item(request, item_id: int):
+    # Here item_id must be convertable to integer
+    # It will be validated and sanitized
+    return {"item_id": item_id}
+```
+
+</b>
+If `item_id` can not be converted to integer it will respond 
+with such error:
+
+```json
+{
+    "detail": [
+        {
+            "loc": [
+                "path",
+                "item_id"
+            ],
+            "msg": "value is not a valid integer",
+            "type": "type_error.integer"
+        }
+    ]
+}
+```
+
+
+
+
+
+
+
+
 
 
 
