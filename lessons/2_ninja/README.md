@@ -99,5 +99,57 @@ http://127.0.0.1:8000/api/docs
 
 
 
+## 3) API Endpoints:
+
+You need to know what is the **request method**, these are 
+examples of the request methods:  
+- GET
+- POST
+- PUT
+- DELETE
+- Patch
+- ...
+
+<b>
+
+```python
+@api.get("/path")
+def get_operation(request):
+    ...
+```
+
+</b>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
