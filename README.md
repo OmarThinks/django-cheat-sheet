@@ -9,7 +9,7 @@
 
 
 <h2>
-	<a href="lessons/2_rest/README.md">
+	<a href="lessons/2_ninja/README.md">
 		2) Django Ninja
 	</a>
 </h2>
