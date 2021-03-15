@@ -8,15 +8,14 @@
 <b>
 
 ```bash
-pip install django
-pip install djangorestframework
-pip freeze --local > requirements.txt
-django-admin startproject restApp # Application name
-cd restApp # Application name
+pip install django-ninja
+django-admin startproject <app name> # Create a django app
+cd <app name> # Get to the directory
 python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser
 winpty python manage.py createsuperuser #Windows
+python manage.py runserver
 ```
 
 </b>
@@ -44,26 +43,6 @@ python manage.py runserver
 
 
 
-
-
-
-
-
-
-
-## 2) Create a sub app with it's model:
-
-
-<b>
-
-
-```bash
-python manage.py startapp products
-python manage.py startapp api
-```
-
-
-</b>
 
 
 
