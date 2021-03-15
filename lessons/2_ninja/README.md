@@ -198,11 +198,56 @@ with such error:
 
 
 
-### 4-3) 
+
+### 4-3) Several path parameters:
+
+<b>
+
+```python
+@api.get("/events/{year}/{month}/{day}")
+def events(request, year: int, month: int, day: int):
+    return {"date": [year, month, day]}
+```
+
+</b>
 
 
 
 
+### 4-4) Using Schema with parameters variables:
+
+<b>
+
+```python
+import datetime
+from ninja import Schema, Path
+
+
+class PathDate(Schema):
+    year: int
+    month: int
+    day: int
+
+    def value(self):
+        return datetime.date(self.year, self.month, self.day)
+
+
+@api.get("/events/{year}/{month}/{day}")
+def events(request, date: PathDate = Path(...)):
+    return {"date": date.value()}
+```
+
+</b>
+
+Now try this link:  
+<b>http://127.0.0.1:8000/api/events/1/1/1</b>  
+The output will be:
+
+```json
+{
+	"date": "0001-01-01"
+}
+```
 
 
 
