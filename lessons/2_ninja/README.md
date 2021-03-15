@@ -2,7 +2,7 @@
 
 
 
-## 1) Hello Ninja:
+## 1) Hello, Ninja!
 
 
 <b>
@@ -48,10 +48,11 @@ urlpatterns = [
 
 In your browser test this address:
 
+<b>
 
-```address
 http://127.0.0.1:8000/api/add?a=1&b=2
-```
+
+</b>
 
 The result will be:
 
@@ -62,6 +63,23 @@ The result will be:
 
 
 
+
+
+
+
+
+## 2) Interactive API docs:
+
+
+
+In your browser, go to this location:  
+
+
+<b>
+<a href="http://127.0.0.1:8000/api/docs">
+http://127.0.0.1:8000/api/docs
+</a>
+</b>
 
 
 
