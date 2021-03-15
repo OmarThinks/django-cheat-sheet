@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ninja import NinjaAPI
+from ninja import (NinjaAPI, Schema, Path)
+import datetime
 
 api = NinjaAPI()
 
@@ -23,6 +24,22 @@ api = NinjaAPI()
 @api.get("/add")
 def add(request, a: int, b: int):
     return {"result": a + b}
+
+
+class PathDate(Schema):
+    year: int
+    month: int
+    day: int
+
+    def value(self):
+        return datetime.date(self.year, self.month, self.day)
+
+
+@api.get("/events/{year}/{month}/{day}")
+def events(request, date: PathDate = Path(...)):
+    return {"date": date.value()}
+
+
 
 
 urlpatterns = [
