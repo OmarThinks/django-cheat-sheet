@@ -302,6 +302,26 @@ The output will be:
 
 
 
+### 5-1) How to use query parameters:
+
+<b>
+
+```python
+@api.get("/products")
+def list_weapons(request, id: int, name: str):
+    return {"id":id, "name":name}
+```
+
+</b>
+
+When using this link:  
+http://127.0.0.1:8000/api/products?id=1&name=abc  
+The result will look like this:
+```json
+{"id": 1, "name": "abc"}
+```
+
+
 
 
 

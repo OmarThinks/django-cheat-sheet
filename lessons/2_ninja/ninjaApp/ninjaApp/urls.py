@@ -42,6 +42,11 @@ def events(request, date: PathDate = Path(...)):
 
 
 
+@api.get("/products")
+def list_weapons(request, id: int, name: str):
+    return {"id":id, "name":name}
+
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", api.urls),
