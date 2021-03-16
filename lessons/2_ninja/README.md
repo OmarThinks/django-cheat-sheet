@@ -1,7 +1,5 @@
 # 2) Django Ninja
 
-
-
 ## 1) Hello, Ninja!
 
 
@@ -55,7 +53,6 @@ http://127.0.0.1:8000/api/add?a=1&b=2
 </b>
 
 The result will be:
-
 ```json
 {"result": 3}
 ```
@@ -70,10 +67,7 @@ The result will be:
 
 ## 2) Interactive API docs:
 
-
-
 In your browser, go to this location:  
-
 
 <b>
 <a href="http://127.0.0.1:8000/api/docs">
@@ -148,7 +142,6 @@ def get_operation(request):
 
 ## 4) Path Parameters:
 
-
 ### 4-1) Normal path parameter:
 
 <b>
@@ -210,9 +203,6 @@ def events(request, year: int, month: int, day: int):
 ```
 
 </b>
-
-
-
 
 ### 4-4) Using Schema with parameters variables:
 
@@ -300,8 +290,6 @@ The output will be:
 
 ## 5) Query Parameters:
 
-
-
 ### 5-1) How to use query parameters:
 
 <b>
@@ -321,24 +309,6 @@ The result will look like this:
 {"id": 1, "name": "abc"}
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### 5-2) Optional query parameters (with default values):
 
 <b>
@@ -355,14 +325,10 @@ Now that the **`id`** has a **default value** of **`1`**,
 this means that it is **optional**.
 
 
-
-
-
-
-
 ### 5-3) Using Schema:
 
 <b>
+Using Pydantic models.
 
 ```python
 import datetime
@@ -380,6 +346,7 @@ def product(request, product: ProductSchema = Query(...)):
 
 </b>
 
+If there was any **error**, it will be a **pydantic error**.
 
 
 
@@ -394,6 +361,114 @@ def product(request, product: ProductSchema = Query(...)):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 6) Request body:
+
+
+
+<b>
+You should use a Schema
+
+```python
+from ninja import Schema
+
+class Item(Schema):
+    name: str
+    description: str = None
+    price: float
+    quantity: int
+
+@api.post("/items")
+def create(request, item: Item):
+    return item
+```
+
+</b>
+
+
+Or you can read the **`request.body`** normally.
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 7) Request body, URL parameters and Query parameters:
+
+
+<b>
+
+```python
+from ninja import Schema
+
+class Item(Schema):
+    name: str
+    description: str = None
+    price: float
+    quantity: int
+
+@api.post("/items/{item_id}")
+def update(request, item_id: int, item: Item, q: str):
+    return {"item_id": item_id, "item": item.dict(), "q": q}
+```
+
+</b>
+
+
+<table>
+	<tr>
+		<th>Field Name</th>
+		<th>Interpretation</th>
+		<th>Reason</th>
+	</tr>
+	<tr>
+		<td>item_id</td>
+		<td>URL Parameter</td>
+		<td>It has been already declared in the url parameters</td>
+	</tr>
+	<tr>
+		<td>item</td>
+		<td>Request body</td>
+		<td>It is a pytdantic schema model, without using 
+		the <code>Query</code></td>
+	</tr>
+	<tr>
+		<td>q</td>
+		<td>Query parameter</td>
+		<td>Single type</td>
+	</tr>
+
+
+
+
+</table>
 
 
 
