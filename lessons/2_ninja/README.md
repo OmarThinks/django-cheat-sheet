@@ -174,9 +174,9 @@ def read_item(request, item_id: int):
 ```
 
 </b>
+
 If `item_id` can not be converted to integer it will respond 
 with such error:
-
 ```json
 {
     "detail": [
@@ -345,12 +345,11 @@ The result will look like this:
 
 ```python
 @api.get("/products")
-def list_weapons(request, id: int = 1, name: str):
+def list_products(request, id: int = 1, name: str):
     return {"id":id, "name":name}
 ```
 
 </b>
-
 
 Now that the **`id`** has a **default value** of **`1`**, 
 this means that it is **optional**.
@@ -361,8 +360,25 @@ this means that it is **optional**.
 
 
 
+### 5-3) Using Schema:
 
+<b>
 
+```python
+import datetime
+from ninja import Schema, Query
+
+class ProductSchema(Schema):
+    name: str
+    amount: int = 1
+    in_stock: bool = True
+
+@api.get("/product")
+def product(request, product: ProductSchema = Query(...)):
+    return {"product": product.dict()}
+```
+
+</b>
 
 
 
