@@ -339,6 +339,36 @@ The result will look like this:
 
 
 
+### 5-2) Optional query parameters (with default values):
+
+<b>
+
+```python
+@api.get("/products")
+def list_weapons(request, id: int = 1, name: str):
+    return {"id":id, "name":name}
+```
+
+</b>
+
+
+Now that the **`id`** has a **default value** of **`1`**, 
+this means that it is **optional**.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
