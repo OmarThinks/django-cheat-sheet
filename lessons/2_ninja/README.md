@@ -951,8 +951,63 @@ api.add_router("/blogs/", blogs_router)
 
 
 
+## 14) Operations parameters:
 
 
+<b>
+
+```python
+
+class Order(Schema):
+	user_id: int
+	product_id: int
+	amount: float = 1.0
+
+@api.post("/orders/", tags=["Orders: Create"], 
+	summary="Create an Order")
+def create_order(request, order: Order):
+    """
+This endpoint will enable you to create an order
+Please provide these fields:
+- **user_id**: an integer of the id of the user
+- **product_id**: an integer of the id of the product
+- **amount**: an float representing the amount of the order
+    """
+    return {"success": True}
+
+@api.post("/orders/several", tags=[
+	"Orders: Create Several (Deprecated)"],
+ deprecated=True)
+def create_orders_several(request, order: Order):
+    return {"success": True}
+```
+
+</b>
+
+
+Here we will edit the documentation to add more details.  
+
+**http://127.0.0.1:8000/api/docs**
+
+<img src="images/1.png">
+
+This is the documentation of the first endpoint
+
+1. **`tags`** value
+2. **`summary`** value
+3. the **comments** in the beginning of the function
+
+
+
+
+<img src="images/2.png">
+This is the documentation of the first endpoint
+
+1. in this line:
+	- **By default** the **summary is auto generated** form the 
+	name of the function
+	- the endpoint is shown as deleted
+2. It shows a **deprecation warning**
 
 
 
