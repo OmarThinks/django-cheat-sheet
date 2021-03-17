@@ -464,15 +464,55 @@ def update(request, item_id: int, item: Item, q: str):
 		<td>Query parameter</td>
 		<td>Single type</td>
 	</tr>
-
-
-
-
 </table>
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 8) Form Data:
+
+
+<b>
+
+```python
+from ninja import NinjaAPI, Form
+
+@api.post("/login")
+def login(request, username: str = Form(...), 
+	password: str = Form(...)):
+    return {'username': username, 'password': '*****'}
+```
+
+</b>
 
 
 
