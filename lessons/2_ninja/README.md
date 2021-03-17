@@ -848,13 +848,9 @@ UserSchema = create_schema(User, fields=['id', 'username'])
 
 
 ## 13) Routers:
-
-
-
 In real life apps, you will not have only one application.  
 You will have lots of apps.  
 The folder strucrure will look like this:
-
 ```
 ├── myproject
 │   └── settings.py
@@ -868,13 +864,7 @@ The folder strucrure will look like this:
 └── manage.py
 
 ```
-
-
 Now, in each app, add a file called `api.py`, like this:
-
-
-
-
 ```
 ├── myproject
 │   └── settings.py
@@ -895,7 +885,7 @@ Now, in each app, add a file called `api.py`, like this:
 
 Now, `events.api.py` make it look like this:
 
-
+<b>
 
 ```python
 from ninja import Router
@@ -911,15 +901,11 @@ def list_events(request):
     ]
 ```
 
+</b>
 
+Now collect all the routers in the main app, like this:
 
-
-
-Now collect all the routers in the main app, like this
-
-
-
-
+<b>
 
 ```python
 from ninja import NinjaAPI
@@ -933,4 +919,41 @@ api.add_router("/events/", events_router)
 api.add_router("/news/", news_router)
 api.add_router("/blogs/", blogs_router)
 ```
+
+</b>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
