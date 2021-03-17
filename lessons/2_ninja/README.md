@@ -1012,3 +1012,119 @@ This is the documentation of the first endpoint
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 15) Errors:
+
+<b>
+
+```python
+class ServiceUnavailableError(Exception):
+    pass
+
+# initializing handler
+@api.exception_handler(ServiceUnavailableError)
+def service_unavailable(request, exc):
+    return api.create_response(
+        request,
+        {"message": "Please retry later"},
+        status=503,
+    )
+
+# some logic that throws exception
+@api.get("/service")
+def some_operation(request):
+    raise ServiceUnavailableError()
+```
+
+```python
+from ninja.errors import HttpError
+
+@api.get("/some/resource")
+def some_operation(request):
+    if True:
+        raise HttpError(503, 
+        	"Service Unavailable. Please retry later.")
+```
+
+
+
+</b>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

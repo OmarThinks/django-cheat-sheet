@@ -85,6 +85,31 @@ def create_orders_several(request, order: Order):
 
 
 
+class ServiceUnavailableError(Exception):
+    pass
+
+
+# initializing handler
+
+@api.exception_handler(ServiceUnavailableError)
+def service_unavailable(request, exc):
+    return api.create_response(
+        request,
+        {"message": "Please retry later"},
+        status=503,
+    )
+
+
+# some logic that throws exception
+
+@api.get("/service")
+def some_operation(request):
+    raise ServiceUnavailableError()
+
+
+
+
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", api.urls),
