@@ -522,3 +522,75 @@ def login(request, username: str = Form(...),
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 9) File Upload:
+
+
+
+<b>
+
+```python
+from ninja import NinjaAPI, File
+from ninja.files import UploadedFile
+
+# With this endpoint you can upload one file
+@api.post("/upload")
+def upload(request, file: UploadedFile = File(...)):
+    data = file.read()
+    return {'name': file.name, 'len': len(data)}
+
+
+from typing import List
+
+# With this endpoint you can upload several files
+@api.post("/upload-many")
+def upload_many(request, files: List[UploadedFile] = File(...)):
+    return [f.name for f in files]
+```
+
+</b>
+
+
+
+
+
+Each file has the **Django's UploadFile** methods and attributes:
+
+
+- ``read()``
+- ``multiple_chunks(chunk_size=None)``
+- ``name``
+- ``size``
+- ``content_type``
+- ect.
+
+
+
+
+
+
+
+
+
+
+
