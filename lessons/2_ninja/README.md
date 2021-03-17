@@ -832,3 +832,105 @@ UserSchema = create_schema(User, fields=['id', 'username'])
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 13) Routers:
+
+
+
+In real life apps, you will not have only one application.  
+You will have lots of apps.  
+The folder strucrure will look like this:
+
+```
+├── myproject
+│   └── settings.py
+├── events/
+│   ├── __init__.py
+│   └── models.py
+├── news/
+│   └── ...
+├── blogs/
+│   └── ...
+└── manage.py
+
+```
+
+
+Now, in each app, add a file called `api.py`, like this:
+
+
+
+
+```
+├── myproject
+│   └── settings.py
+├── events/
+│   ├── __init__.py
+│   ├── api.py
+│   └── models.py
+├── news/
+│   ├── __init__.py
+│   ├── api.py
+│   └── models.py
+├── blogs/
+│   ├── __init__.py
+│   ├── api.py
+│   └── models.py
+└── manage.py
+```
+
+Now, `events.api.py` make it look like this:
+
+
+
+```python
+from ninja import Router
+from .models import Event
+
+router = Router()
+
+@router.get('/')
+def list_events(request):
+    return [
+        {"id": e.id, "title": e.title}
+        for e in Event.objects.all()
+    ]
+```
+
+
+
+
+
+Now collect all the routers in the main app, like this
+
+
+
+
+
+```python
+from ninja import NinjaAPI
+from events.api import router as events_router
+from news.api import router as news_router
+from blogs.api import router as blogs_router
+
+api = NinjaAPI()
+
+api.add_router("/events/", events_router)
+api.add_router("/news/", news_router)
+api.add_router("/blogs/", blogs_router)
+```
+
