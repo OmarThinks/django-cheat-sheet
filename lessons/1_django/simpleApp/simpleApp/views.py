@@ -8,8 +8,5 @@ def homepage(request):
 def about(request):
 	return HttpResponse("About")
 
-
-
-
 def not_found(request, exception):
 	return HttpResponse("NOoooOtTt FOoouUUnnNndDDDDd")

@@ -722,6 +722,37 @@ Now we can redirect to this page using : `aricles:specific`.
 
 
 
+## 14) Default error messges:
+
+<b>
+
+`simpleApp/settings.py`
+```python
+DEBUG = False
+ALLOWED_HOSTS = ["*"]
+```
+
+`simpleApp/views.py`
+```python
+def not_found(request, exception):
+	return HttpResponse("NOoooOtTt FOoouUUnnNndDDDDd")
+```
+
+`simpleApp/urls.py`
+```python
+handler404 = 'simpleApp.views.not_found'
+```
+
+</b>
+
+
+
+
+
+
+
+
+
 
 
 
