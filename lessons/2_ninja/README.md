@@ -545,8 +545,6 @@ def login(request, username: str = Form(...),
 
 ## 9) File Upload:
 
-
-
 <b>
 
 ```python
@@ -571,12 +569,7 @@ def upload_many(request, files: List[UploadedFile] = File(...)):
 </b>
 
 
-
-
-
 Each file has the **Django's UploadFile** methods and attributes:
-
-
 - ``read()``
 - ``multiple_chunks(chunk_size=None)``
 - ``name``
@@ -584,6 +577,55 @@ Each file has the **Django's UploadFile** methods and attributes:
 - ``content_type``
 - ect.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 10) Response Schema:
+
+
+```python
+from ninja import Schema
+
+class UserIn(Schema):
+    username: str
+    password: str
+
+class UserOut(Schema):
+    id: int
+    username: str
+
+@api.post("/users/", response=UserOut)
+def create_user(request, data: UserIn):
+    user = User(username=data.username)
+    user.set_password(data.password)
+    user.save()
+    return user
+```
+
+
+
+<b>
+
+This line Determines the response schema:
+```python
+@api.post("/users/", response=UserOut)
+```
+
+</b>
 
 
 
