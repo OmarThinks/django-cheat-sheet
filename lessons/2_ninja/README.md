@@ -661,10 +661,7 @@ This line Determines the response schema:
 
 
 ## 11) CRUD Example:
-
-
 The models:
-
 ```python
 class Department(models.Model):
     title = models.CharField(max_length=100)
@@ -675,16 +672,7 @@ class Employee(models.Model):
     department = models.ForeignKey(Department)
     birthdate = models.DateField(null=True, blank=True)
 ```
-
-
-
-
-
 The URLs:
-
-
-
-
 ```python
 from datetime import date
 from typing import List
@@ -748,6 +736,87 @@ def delete_employee(request, employee_id: int):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 12) Schemas from Django models:
+
+<b>
+
+```python
+def create_schema(
+    model, # django model
+    name = "", # name for the generated class, if empty model names is used
+    depth = 0, # if > 0 schema will be also created for the nested ForeignKeys and Many2Many (with the provided depth of lookup)
+    fields: list[str] = None, # if passed - ONLY these fields will added to schema
+    exclude: list[str] = None, # if passed - these fields will be excluded from schema
+)
+```
+
+</b>
+
+
+
+Example:
+
+
+```python
+UserSchema = create_schema(User, fields=['id', 'username'])
+
+# Will create schema like this:
+# 
+# class UserSchema(Schema):
+#     id: int
+#     username: str
+```
 
 
 
