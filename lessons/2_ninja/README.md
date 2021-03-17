@@ -1060,7 +1060,7 @@ This is the documentation of the first endpoint
 
 
 
-## 15) Errors:
+## 15) Error handling:
 
 <b>
 

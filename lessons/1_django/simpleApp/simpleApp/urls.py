@@ -19,6 +19,12 @@ from .views import (about, homepage)
 from django.contrib.staticfiles.urls import (
     staticfiles_urlpatterns)
 
+
+
+from django.conf.urls import (handler404)
+
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('articles/',include("articles.urls")),
@@ -27,3 +33,6 @@ urlpatterns = [
 ]
 
 urlpatterns += staticfiles_urlpatterns()
+
+handler404 = 'simpleApp.views.not_found'
+
