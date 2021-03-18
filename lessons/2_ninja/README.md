@@ -1093,8 +1093,6 @@ def some_operation(request):
         	"Service Unavailable. Please retry later.")
 ```
 
-
-
 </b>
 
 
@@ -1119,6 +1117,225 @@ def some_operation(request):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 16) Authentication:
+
+### 16-1) API Key:
+
+Authentication can be in one of the following:
+
+<b>
+
+1. Headers
+2. Cookies
+3. Query
+
+</b>
+It will look like this:
+<b>
+
+```
+Cookie: X-API-KEY=abcdef12345
+```
+
+</b>
+
+
+
+
+
+
+
+### 16-2) Authentication on one end point:
+
+
+### Header
+
+<b>
+
+```python
+from ninja.security import APIKeyHeader
+
+class ApiKey(APIKeyHeader):
+    param_name = "X-API-Key"
+
+    def authenticate(self, request, key):
+        if key == "supersecret":
+            return key
+
+header_key = ApiKey()
+
+@api.get("/headerkey", auth=header_key)
+def apikey(request):
+    return f"Token = {request.auth}"
+```
+
+</b>
+
+
+This is the **request**:
+
+<b>
+
+```bash
+curl --location --request GET '127.0.0.1:8000/api/headerkey' \
+--header 'X-API-Key: supersecret'
+```
+
+</b>
+
+
+This is the **response**:
+
+<b>
+
+```
+"Token = supersecret"
+```
+
+</b>
+
+
+In case of **Authentication failure**:  
+This is the **response**:
+
+<b>
+
+```json
+{
+    "detail": "Unauthorized"
+}
+```
+status code = 401
+
+</b>
+
+
+
+
+
+
+
+### Cookie:
+
+<b>
+
+```python
+from ninja.security import APIKeyCookie
+
+class CookieKey(APIKeyCookie):
+    def authenticate(self, request, key):
+        if key == "supersecret":
+            return key
+
+cookie_key = CookieKey()
+
+@api.get("/cookiekey", auth=cookie_key)
+def apikey(request):
+    return f"Token = {request.auth}"
+```
+
+</b>
+
+
+
+### Query:
+
+<b>
+
+```python
+from ninja.security import APIKeyQuery
+from someapp.models import Client
+
+class ApiKey(APIKeyQuery):
+    param_name = "api_key"
+
+    def authenticate(self, request, key):
+        try:
+            return Client.objects.get(key=key)
+        except Client.DoesNotExist:
+            pass
+
+api_key = ApiKey()
+
+@api.get("/apikey", auth=api_key)
+def apikey(request):
+    assert isinstance(request.auth, Client)
+    return f"Hello {request.auth}"
+```
+
+
+</b>
+
+
+
+
+
+
+
+
+### 16-3) Global Auth:
+
+This auth will be for all endpoints associated with this API.
+
+<b>
+
+```python
+from ninja import NinjaAPI, Form
+from ninja.security import HttpBearer
+
+class GlobalAuth(HttpBearer):
+    def authenticate(self, request, token):
+        if token == "supersecret":
+            return token
+
+api = NinjaAPI(auth=GlobalAuth())
+
+# @api.get(...)
+# def ...
+# @api.post(...)
+# def ...
+
+@api.post("/token", auth=None)  # < overriding global auth
+def get_token(request, username: str = Form(...), password: str = Form(...)):
+    if username == "admin" and password == "giraffethinnknslong":
+        return {"token": "supersecret"}
+```
+
+</b>
+
+
+
+### 16-4) Overriding global auth:
+When there is a global auth, you can **override global 
+auth on one endpoint** using **`auth=None`**, like this:
+
+
+```python
+@api.post("/token", auth=None)  # < overriding global auth
+def get_token(request):
+    ...
+```
 
 
 

@@ -110,6 +110,28 @@ def some_operation(request):
 
 
 
+from ninja.security import APIKeyHeader
+
+
+class ApiKey(APIKeyHeader):
+    param_name = "X-API-Key"
+
+    def authenticate(self, request, key):
+        if key == "supersecret":
+            return key
+
+
+header_key = ApiKey()
+
+
+@api.get("/headerkey", auth=header_key)
+def apikey(request):
+    return f"Token = {request.auth}"
+
+
+
+
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", api.urls),
