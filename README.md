@@ -14,4 +14,10 @@
 	</a>
 </h2>
 
+<h2>
+	<a href="lessons/3_rest/README.md">
+		3) Django Rest Framework
+	</a>
+</h2>
+
 
