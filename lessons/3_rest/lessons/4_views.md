@@ -161,6 +161,8 @@ You can add any request methods for the same endpoint.
 <b>
 
 ```python
+from rest_framework.decorators import api_view, throttle_classes
+
 @api_view(['GET', 'POST'])
 def hello_world(request):
     if request.method == 'POST':
