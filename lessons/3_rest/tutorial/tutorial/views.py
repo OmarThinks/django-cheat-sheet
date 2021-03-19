@@ -18,7 +18,7 @@ class ListUsers(APIView):
     * Requires token authentication.
     * Only admin users are able to access this view.
     """
-    authentication_classes = []
+    #authentication_classes = []
     #permission_classes = [permissions.IsAdminUser]
 
     def get(self, request, format=None):
@@ -53,16 +53,13 @@ class UserList(generics.ListCreateAPIView):
 
 
 
-class hello_world_view(APIView):
+class hello_world1(APIView):
     def get(self, request, format=None):
         #usernames = [user.username for user in User.objects.all()]
         return Response({"message": "Hello, world!"})
 
-
-
-
 @api_view(['GET', 'POST'])
-def hello_world(request):
+def hello_world2(request):
     if request.method == 'POST':
         return Response({"message": "Got some data!", 
         	"data": request.data})

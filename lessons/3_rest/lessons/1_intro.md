@@ -31,3 +31,18 @@ password:admin
 
 
 
+`settings.py`
+
+<b>
+
+```python
+INSTALLED_APPS = [
+    ...
+    'rest_framework',
+]
+```
+
+</b>
+
+
+
