@@ -1,6 +1,65 @@
 # 4) Views:
 
 
+## Example:
+
+`views.py`
+
+<b>
+
+```python
+from rest_framework.decorators import api_view, throttle_classes
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
+class hello_world1(APIView):
+    def get(self, request, format=None):
+        #usernames = [user.username for user in User.objects.all()]
+        return Response({"message": "Hello, world!"})
+
+@api_view(['GET', 'POST'])
+@throttle_classes([])
+def hello_world2(request):
+    if request.method == 'POST':
+        return Response({"message": "Got some data!", 
+        	"data": request.data})
+    return Response({"message": "Hello, world!"})
+```
+
+</b>
+
+
+
+
+
+
+
+
+
+`urls.py`
+
+<b>
+
+```python
+from .views import (hello_world1, hello_world2)
+
+urlpatterns = [
+    ...,
+    path('hello_world1/', hello_world1.as_view()),
+    path('hello_world2/', hello_world2),
+]
+```
+
+</b>
+
+
+
+
+
+
+
+
+
 ## 1) APIView:
 
 ### 1-1) APIView class:

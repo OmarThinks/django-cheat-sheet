@@ -59,6 +59,7 @@ class hello_world1(APIView):
         return Response({"message": "Hello, world!"})
 
 @api_view(['GET', 'POST'])
+@throttle_classes([])
 def hello_world2(request):
     if request.method == 'POST':
         return Response({"message": "Got some data!", 
