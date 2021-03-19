@@ -127,13 +127,13 @@ response of the endpoint.
 
 
 
-## 1) APIView:
+## 2) APIView:
 
 
 
 
 
-### 1-2) APIView Signature:
+### 2-1) APIView Signature:
 
 <b>
 
@@ -155,7 +155,7 @@ You can add any request methods for the same endpoint.
 
 
 
-### 1-2) Example:
+### 2-2) APIView Example:
 
 
 <b>
@@ -182,6 +182,35 @@ authentication classes etc specified in the settings.
 
 
 
+
+
+
+
+
+
+
+### 2-3) APIView Decorators:
+
+
+- **`@renderer_classes(...)`**
+- **`@parser_classes(...)`**
+- **`@authentication_classes(...)`**
+- **`@throttle_classes(...)`**
+- **`@permission_classes(...)`**
+
+**Each of these decorators takes a single 
+argument which must be a list or tuple of classes.**
+
+<b>
+
+```python
+@api_view(['GET'])
+@throttle_classes([OncePerDayUserThrottle])
+def view(request):
+    return Response({"message": "Hello for today! See you tomorrow!"})
+```
+
+</b>
 
 
 
