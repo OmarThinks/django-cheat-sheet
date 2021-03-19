@@ -127,6 +127,60 @@ response of the endpoint.
 
 
 
+## 1) APIView:
+
+
+
+
+
+### 1-2) APIView Signature:
+
+<b>
+
+```python
+@api_view(http_method_names=['GET'])
+```
+
+</b>
+
+The **default request method** for this endpoint is **`GET`**.  
+You can add any request methods for the same endpoint.
+
+
+
+
+
+
+
+
+
+
+### 1-2) Example:
+
+
+<b>
+
+```python
+@api_view(['GET', 'POST'])
+def hello_world(request):
+    if request.method == 'POST':
+        return Response({"message": "Got some data!", "data": request.data})
+    return Response({"message": "Hello, world!"})
+```
+
+</b>
+
+This view will **use the default** renderers, parsers, 
+authentication classes etc specified in the settings.
+
+
+
+
+
+
+
+
+
 
 
 
