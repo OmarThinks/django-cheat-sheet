@@ -42,9 +42,9 @@ class ListUsers(APIView):
 The **`APIView`** will contain the methods that will handle the
 request by type:
 
-1. **`get`**
-2. **`post`**
-3. ect.
+- **`get`**
+- **`post`**
+- ect.
 
 
 The `get` method will handle the request method of `get` when 
@@ -56,6 +56,50 @@ The same thing with the `post` method.
 
 
 ### 1-3) APIView attributes:
+
+- **`authentication_classes`**
+- **`permission_classes`**
+- **`throttle_classes`**
+- **`renderer_classes`**
+- **`parser_classes`**
+- **`content_negotiation_class`**
+
+
+
+In these attributes, you can set the values of how to 
+authenticate all the endpoints of this view, how to throttle, ect.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
