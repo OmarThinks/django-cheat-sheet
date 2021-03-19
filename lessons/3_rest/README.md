@@ -1,8 +1,4 @@
-
 # 3) Django REST Framework:
-
-## 1) Hello, REST!
-
 
 
 
@@ -16,7 +12,6 @@
 
 
 
-## 2)kjh
 
 
 

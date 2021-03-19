@@ -1,6 +1,10 @@
 # 1) Intro
 
 
+## 1) Create the App:
+
+
+Here we will install requirements and create the first app.
 
 <b>
 
@@ -22,3 +26,8 @@ python manage.py runserver
 
 username:admin  
 password:admin
+
+
+
+
+
