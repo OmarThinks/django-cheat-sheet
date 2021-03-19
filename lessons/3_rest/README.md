@@ -11,7 +11,7 @@
 
 <h2>
 	<a href="lessons/2_request.md">
-		2) Request
+		2) Requests
 	</a>
 </h2>
 
