@@ -16,6 +16,13 @@
 </h2>
 
 
+<h2>
+	<a href="lessons/3_response.md">
+		3) Responses
+	</a>
+</h2>
+
+
 
 
 
