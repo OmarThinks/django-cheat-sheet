@@ -79,6 +79,32 @@ authenticate all the endpoints of this view, how to throttle, ect.
 
 
 
+### 1-4) Dispatch methods:
+
+
+These methods will be executed before or after the 
+response of the endpoint.
+
+
+- **`initial(self, request, *args, **kwargs)`**
+	- used to enforce permissions and throttling, and 
+	perform content negotiation.
+- **`handle_exception(self, exc)`**
+- **`handle_exception(self, exc)`**
+- **`initialize_request(self, request, *args, **kwargs)`**
+- **`finalize_response(self, request, response, *args, **kwargs)`**
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
