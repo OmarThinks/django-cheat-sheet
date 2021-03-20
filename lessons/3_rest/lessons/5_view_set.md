@@ -15,21 +15,25 @@ Using **`ViewSet`** lets you write all the logic that is related
 ```python
 from rest_framework import viewsets
 from rest_framework.response import Response
+from rest_framework.decorators import action
 
 class HelloViewSet(viewsets.ViewSet):
     """
     Hello, World!
 
     """
-    def hello1(self, request):
-        return Response({"message": "Hello1!"})
+    def h1(self, request):
+        return Response({"message": "Hello1, 1!"})
 
-    def hello2(self, request):
-        return Response({"message": "Hello!"})
+    def h2(self, request):
+        return Response({"message": "Hello, 2!"})
 
+    @action(detail = False, authentication_classes=[])
+    def h3(self, request):
+        return Response({"message": "Hello, 3!"})
 
-hello1ViewSet = HelloViewSet.as_view({'get': 'hello1'})
-hello2ViewSet = HelloViewSet.as_view({'get': 'hello2'})
+h1 = HelloViewSet.as_view({'get': 'h1'})
+h2 = HelloViewSet.as_view({'get': 'h2', 'post': 'h3'})
 ```
 
 
@@ -38,17 +42,71 @@ hello2ViewSet = HelloViewSet.as_view({'get': 'hello2'})
 
 `urls.py`
 ```python
-from .views import (hello1ViewSet,hello2ViewSet)
+from .views import (h1,h2)
 
 urlpatterns = [
-	... ,
-    path('hello1ViewSet/', hello1ViewSet),
-    path('hello2ViewSet/', hello2ViewSet),
-
+    ... ,
+    path('h1/', h1),
+    path('h2/', h2),
 ]
 ```
 
 </b>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 3) `@action`:
+
+
+
+With **`@action`** decorator you can specify a speific request 
+for this endpoint, you can also add some auth.  
+
+### `@action` arguments:
+
+
+
+- **`detail`**:
+    - **required**
+    - a boolean telling whther this should return detailed 
+        or a list of data
+- **`methods`**:
+    - **optional**, default = **`["get"]`**
+    - a list of the methods of this endpoint
+
+
+  
+  
+  
+- **`renderer_classes`**:
+    - **optional**
+- **`parser_classes`**:
+    - **optional**
+- **`authentication_classes`**:
+    - **optional**
+- **`throttle_classes`**:
+    - **optional**
+- **`permission_classes`**:
+    - **optional**
+- **`content_negotiation_class`**:
+    - **optional**
+
+
+
+
+
 
 
 
