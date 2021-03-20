@@ -10,7 +10,6 @@ from django.contrib.auth.models import User
 
 
 
-
 class ListUsers(APIView):
     """
     View to list all users in the system.

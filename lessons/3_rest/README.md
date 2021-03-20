@@ -35,8 +35,8 @@
 </h2>
 
 <h2>
-	<a href="lessons/6_router.md">
-		6) Router
+	<a href="lessons/6_serial.md">
+		6) Serializers
 	</a>
 </h2>
 
