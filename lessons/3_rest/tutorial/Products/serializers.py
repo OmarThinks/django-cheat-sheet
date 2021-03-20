@@ -11,7 +11,8 @@ class ProductSerializer(serializers.Serializer):
 	id = serializers.IntegerField(read_only=True)
 	name = serializers.CharField()
 	in_stock = serializers.BooleanField(required=False)
-
+	owner = serializers.IntegerField(read_only=True)
+	
 	def create(self, validated_data):
 		"""
 		Create and return a new `Product` instance, given the validated data.
