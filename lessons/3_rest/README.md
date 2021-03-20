@@ -34,6 +34,12 @@
 	</a>
 </h2>
 
+<h2>
+	<a href="lessons/6_router.md">
+		6) Router
+	</a>
+</h2>
+
 
 
 
