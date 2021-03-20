@@ -65,3 +65,56 @@ def hello_world2(request):
         return Response({"message": "Got some data!", 
         	"data": request.data})
     return Response({"message": "Hello, world!"})
+
+
+
+
+
+
+
+
+
+from rest_framework import viewsets
+from rest_framework.response import Response
+
+class HelloViewSet(viewsets.ViewSet):
+    """
+    Hello, World!
+
+    """
+    def hello1(self, request):
+        return Response({"message": "Hello1!"})
+
+    def hello2(self, request):
+        return Response({"message": "Hello!"})
+
+
+hello1ViewSet = HelloViewSet.as_view({'get': 'hello1'})
+hello2ViewSet = HelloViewSet.as_view({'get': 'hello2'})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

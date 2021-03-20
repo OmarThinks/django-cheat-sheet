@@ -29,8 +29,8 @@
 </h2>
 
 <h2>
-	<a href="lessons/5_view_sets.md">
-		5) ViewSets
+	<a href="lessons/5_view_set.md">
+		5) ViewSet
 	</a>
 </h2>
 
