@@ -1,12 +1,12 @@
-# 6) Serializers:
+# 7) Serializers: Part 2:
+
+**Models** serialization and deserialization.
 
 
-## 1) What is serializing:
 
-- **`Serializing`**: allowing complex data such as querysets 
-and model instances to be converted to native Python datatypes
-- **`Deserializing`**: allowing parsed data to be converted back 
-into complex types, after first validating the incoming data
+## 1) What is the content:
+
+Here we will handle serialization with an ORM model.
 
 
 
@@ -15,9 +15,32 @@ into complex types, after first validating the incoming data
 
 <b>
 
+`models.py`
+
+Here there is the model in the Intro lesson
+
+```python
+from django.db import models
+from django.contrib.auth.models import User
+
+class Product(models.Model):
+	name = models.CharField(max_length=1)
+	in_stock = models.BooleanField(default=True)
+	owner = models.ForeignKey(User, on_delete=models.CASCADE, 
+		null=False, blank=False, default=1)
+```
+
+
+
 `views.py`
 
 ```python
+class ProductClass:
+	def __init__(self, name, owner=1, in_stock=True):
+		self.name = name
+		self.owner = owner
+		self.in_stock = in_stock
+
 from rest_framework import serializers
 
 class ProductSerializerTest(serializers.Serializer):
@@ -148,14 +171,19 @@ s2 = SerializerViewSet.as_view({'get': 'deserializing_1'})
 s3 = SerializerViewSet.as_view({'get': 'deserializing_2'})
 ```
 
+
+`urls.py`
+
+```python
+from .views import (s_a1, s_a2, s_a3)
+from django.urls import (path)
+
+urlpatterns = [
+	path('s_a1', s_a1),
+	path('s_a2', s_a2),
+	path('s_a3', s_a3),
+]
+```
+
 </b>
-
-
-
-
-
-
-
-
-
 
