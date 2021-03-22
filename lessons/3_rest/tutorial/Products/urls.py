@@ -1,4 +1,5 @@
-from .views import (h1, h2, s_a1, s_a2, s_a3)
+from .views import (h1, h2, s_a1, s_a2, s_a3,
+	s_b1)
 from django.urls import (path)
 
 urlpatterns = [
@@ -11,4 +12,6 @@ urlpatterns = [
 	path('s_a3', s_a3),
 
 
+
+	path('s_b1', s_b1),
 ]
