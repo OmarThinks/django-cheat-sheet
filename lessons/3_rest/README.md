@@ -1,13 +1,11 @@
 # 3) Django REST Framework:
 
 
-
 <h2>
 	<a href="lessons/01_intro.md">
 		1) Intro
 	</a>
 </h2>
-
 
 <h2>
 	<a href="lessons/02_request.md">
@@ -34,35 +32,39 @@
 	</a>
 </h2>
 
-<h2>
+
+
+
+
+
+
+
+
+
+## 6) Serialization
+
+<h3>
 	<a href="lessons/06_serial_1.md">
-		6) Serializers: Part 1
+
+6-1) Serialization and Deserialization
 	</a>
+</h3>
 
-</h2>
+<h3>
+	<a href="lessons/06_serial_2.md">
 
-**Objects** serialization and deserialization.
-
-
-<h2>
-	<a href="lessons/07_serial_2.md">
-		7) Serializers: Part 2
+6-2) With Models
 	</a>
+</h3>
 
-</h2>
+<h3>
+	<a href="lessons/06_serial_3.md">
 
-**Models** serialization and deserialization.
-
-
-
-<h2>
-	<a href="lessons/08_serial_3.md">
-		8) Serializers: Part 3
+6-3) Validation
 	</a>
+</h3>
 
-</h2>
 
-**Validation** of serialization.
 
 
 
