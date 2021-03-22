@@ -55,6 +55,17 @@
 
 
 
+<h2>
+	<a href="lessons/08_serial_3.md">
+		8) Serializers: Part 3
+	</a>
+
+</h2>
+
+**Validation** of serialization.
+
+
+
 
 
 
