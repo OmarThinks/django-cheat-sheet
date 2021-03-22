@@ -77,7 +77,6 @@ This means that you have chosen all the fields of this model.
 
 
 ### 2-2) `exclude` attribute:
-
 <b>
 
 ```python
@@ -86,19 +85,44 @@ class AccountSerializer(serializers.ModelSerializer):
         model = Account
         exclude = ['users']
 ```
+</b>
+
+All the names of the fielfds in the **`exclude`** will 
+not be represented in this serialization.
+## Since version 3.3.0, it is mandatory to provide one of the attributes `fields` or `exclude`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### 2-3) `read_only_fields` attribute:
+
+<b>
+
+```python
+class AccountSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Account
+        fields = ['id', 'account_name', 'users', 'created']
+        read_only_fields = ['account_name']
+```
 
 </b>
 
-
-All the names of the fielfds in the `exclude` will 
-not be represented in this serialization.
-
-
-
-
-
-
-
+These fields can not be modified.
 
 
 
