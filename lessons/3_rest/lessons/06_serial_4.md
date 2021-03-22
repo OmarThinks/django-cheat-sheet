@@ -109,7 +109,6 @@ not be represented in this serialization.
 
 
 ### 2-3) `read_only_fields` attribute:
-
 <b>
 
 ```python
@@ -119,9 +118,7 @@ class AccountSerializer(serializers.ModelSerializer):
         fields = ['id', 'account_name', 'users', 'created']
         read_only_fields = ['account_name']
 ```
-
 </b>
-
 These fields can not be modified.
 
 
@@ -139,6 +136,32 @@ These fields can not be modified.
 
 
 
+### 2-4) `extra_kwargs ` attribute:
+
+This option is a dictionary, mapping field names to a dictionary of keyword arguments. For example:
+
+
+
+<b>
+
+```python
+class CreateUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['email', 'username', 'password']
+        extra_kwargs = {'password': {'write_only': True}}
+
+    def create(self, validated_data):
+        user = User(
+            email=validated_data['email'],
+            username=validated_data['username']
+        )
+        user.set_password(validated_data['password'])
+        user.save()
+        return user
+```
+
+</b>
 
 
 
