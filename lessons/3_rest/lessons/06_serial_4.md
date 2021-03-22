@@ -50,6 +50,52 @@ class AccountSerializer(serializers.ModelSerializer):
 
 
 
+## 2) `fields` attribute:
+This attribute lets you tell which fields names of the model 
+will you use in this serializer.  
+It is a list of strings, each value is a field name.
+
+
+<b>
+
+```python
+class AccountSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Account
+        fields = ['id', 'account_name', 'users', 'created']
+        # fields = "__all__"
+```
+
+</b>
+In case of using 
+
+<b>
+
+```python
+fields = "__all__"
+```
+
+</b>
+This means that you have chosen all the fields of this model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
