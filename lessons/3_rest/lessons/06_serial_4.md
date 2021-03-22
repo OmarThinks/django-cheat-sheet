@@ -173,6 +173,21 @@ class CreateUserSerializer(serializers.ModelSerializer):
 
 
 
+## 3) Overriding Fields:
+
+You can **override default fields** by **explicitly declaring this 
+field**.
+<b>
+
+```python
+class AccountSerializer(serializers.ModelSerializer):
+    url = serializers.CharField(source='get_absolute_url', read_only=True)
+    groups = serializers.PrimaryKeyRelatedField(many=True)
+
+    class Meta:
+        model = Account
+```
+</b>
 
 
 
@@ -189,6 +204,31 @@ class CreateUserSerializer(serializers.ModelSerializer):
 
 
 
+## 4) Inspecting a model Sreializer:
+
+
+
+
+
+<b>
+
+```python
+serializer = AccountSerializer()
+print(repr(serializer))
+```
+</b>
+
+
+<b>
+Result:
+
+```python
+AccountSerializer():
+    id = IntegerField(label='ID', read_only=True)
+    name = CharField(allow_blank=True, max_length=100, required=False)
+    owner = PrimaryKeyRelatedField(queryset=User.objects.all())
+```
+</b>
 
 
 
