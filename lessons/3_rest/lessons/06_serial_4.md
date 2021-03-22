@@ -41,20 +41,12 @@ class AccountSerializer(serializers.ModelSerializer):
 
 
 
+## 2) Attributes:
 
-
-
-
-
-
-
-
-
-## 2) `fields` attribute:
+### 2-1) `fields` attribute:
 This attribute lets you tell which fields names of the model 
 will you use in this serializer.  
 It is a list of strings, each value is a field name.
-
 
 <b>
 
@@ -65,10 +57,8 @@ class AccountSerializer(serializers.ModelSerializer):
         fields = ['id', 'account_name', 'users', 'created']
         # fields = "__all__"
 ```
-
 </b>
 In case of using 
-
 <b>
 
 ```python
@@ -86,10 +76,22 @@ This means that you have chosen all the fields of this model.
 
 
 
+### 2-2) `exclude` attribute:
+
+<b>
+
+```python
+class AccountSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Account
+        exclude = ['users']
+```
+
+</b>
 
 
-
-
+All the names of the fielfds in the `exclude` will 
+not be represented in this serialization.
 
 
 
