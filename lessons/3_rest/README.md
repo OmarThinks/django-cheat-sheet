@@ -72,6 +72,14 @@
 </h3>
 
 
+<h3>
+	<a href="lessons/06_serial_5.md">
+
+6-5) Methods and Attributes
+	</a>
+</h3>
+
+
 
 
 
