@@ -64,6 +64,13 @@
 	</a>
 </h3>
 
+<h3>
+	<a href="lessons/06_serial_4.md">
+
+6-4) ModelSerializer
+	</a>
+</h3>
+
 
 
 

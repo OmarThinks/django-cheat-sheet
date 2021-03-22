@@ -5,7 +5,7 @@
 
 ## 1) Validation Types:
 
-### 1) Types of fields
+### 1-1) Types of fields
 
 <b>
 
@@ -20,7 +20,7 @@ this will fail in case of validation.
 
 
 
-### 2) Field-Level Validation
+### 1-2) Field-Level Validation
 
 To validte using the field, 
 - create a method in the serializer that has a name like this:
@@ -48,7 +48,7 @@ unless the the field `required` was equal to `False`, and the
 this value was not input.
 
 
-### 3) Custom Validation (Validators)
+### 1-3) Custom Validation (Validators)
 
 <b>
 
@@ -71,7 +71,7 @@ Note: There are built-in validators, that we will discuss later
 
 
 
-### 4) Object-Level Validation
+### 1-4) Object-Level Validation
 
 
 <b>
@@ -143,7 +143,7 @@ serializer.is_valid(raise_exception=True)
 ```
 </b>
 
-
+The default value of `raise_exception` = `False`
 
 
 
