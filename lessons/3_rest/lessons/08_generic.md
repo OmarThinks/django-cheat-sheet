@@ -2,8 +2,6 @@
 
 
 # 1) Example:
-
-
 <b>
 
 `views.py`
@@ -43,9 +41,7 @@ class ProductDetails(generics.RetrieveUpdateDestroyAPIView):
     """
 ```
 
-
 `urls.py`
-
 ```python
 from .views import (ProductList, ProductDetails)
 from django.urls import (path)
@@ -56,8 +52,6 @@ urlpatterns = [
     path('<int:id>', ProductDetails.as_view()),
 ]
 ```
-
-
 </b>
 
 
@@ -79,6 +73,89 @@ urlpatterns = [
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 2) Attributes:
+
+
+- **`queryset`**
+- **`serializer_class`**
+- **`lookup_field`**
+- **`pagination_class`**
+- **`filter_backends`**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 3) Methods:
 
 
 
