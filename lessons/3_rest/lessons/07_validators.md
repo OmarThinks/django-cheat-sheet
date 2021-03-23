@@ -93,10 +93,8 @@ owner = serializers.HiddenField(
 
 
 ## 3-2) `CreateOnlyDefault`:
-
 This will only be used during the creation of the field.  
 But it will be omitted during updates
-
 <b>
 
 ```python
@@ -110,6 +108,12 @@ created_at = serializers.DateTimeField(
 
 
 
+
+# 4) Using validation with serialization:
+
+
+This has a complete section.  
+Serialization -> Validation of serialization
 
 
 
