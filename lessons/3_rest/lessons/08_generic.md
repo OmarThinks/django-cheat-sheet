@@ -160,13 +160,30 @@ urlpatterns = [
 
 
 
+- **`get_queryset(self)`**
+For example:
+<b>
+
+```python
+def get_queryset(self):
+    user = self.request.user
+    return user.accounts.all()
+```
+</b>
 
 
 
+- **`get_object(self)`**
+
+- **`filter_queryset(self, queryset)`**
+- **`get_serializer_class(self)`**
+- **`get_serializer_class(self)`**
 
 
-
-
+      
+- **`perform_create(self, serializer)`**
+- **`perform_update(self, serializer)`**
+- **`perform_destroy(self, instance)`**
 
 
 
