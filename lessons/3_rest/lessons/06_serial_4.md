@@ -1,6 +1,4 @@
-# 6-4) Serializers:
-
-**ModelSerializer**.
+# 6-4) Serializers: **ModelSerializer**:
 
 
 

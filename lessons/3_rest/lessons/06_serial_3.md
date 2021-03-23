@@ -1,6 +1,4 @@
-# 6-3) Serializers:
-
-**Validation** of serialization.
+# 6-3) Serializers: **Validation** of serialization:
 
 
 ## 1) Validation Types:

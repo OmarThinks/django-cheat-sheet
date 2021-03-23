@@ -1,6 +1,4 @@
-# 6-7) Serializers:
-
-**Fields' Core Arguments**.
+# 6-7) Serializers: **Fields' Core Arguments**:
 
 ## 1) Why?
 These argumnents can be used in any field.
@@ -53,6 +51,12 @@ included in the output representation.
 
 ### **`error_messages`**:
 - A dictionary of error codes to error messages.
+
+
+
+
+### **`label`**:
+- A short text string that may be used as the name of the field in HTML form fields or other descriptive elements.
 
 
 

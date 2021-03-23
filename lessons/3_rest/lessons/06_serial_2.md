@@ -1,6 +1,4 @@
-# 6-2) Serializers:
-
-**Models** serialization and deserialization.
+# 6-2) Serializers: **Models** serialization and deserialization:
 
 
 

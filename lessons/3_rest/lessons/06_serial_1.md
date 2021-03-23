@@ -1,6 +1,4 @@
-# 6-1) Serializers:
-
-**Objects** serialization and deserialization.
+# 6-1) Serializers: Objects serialization and deserialization:
 
 
 

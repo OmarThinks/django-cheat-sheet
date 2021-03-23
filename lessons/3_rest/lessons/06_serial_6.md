@@ -1,6 +1,4 @@
-# 6-6) Serializers:
-
-**Fields**.
+# 6-6) Serializers: **Fields**:
 
 
 ## 1) How to use Fields:

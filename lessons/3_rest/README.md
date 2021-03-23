@@ -117,3 +117,21 @@
 
 
 
+
+
+
+<h2>
+	<a href="lessons/07_validators.md">
+		7) Validators
+	</a>
+</h2>
+
+
+
+
+
+
+
+
+
+
