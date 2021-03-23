@@ -93,6 +93,10 @@ owner = serializers.HiddenField(
 
 
 ## 3-2) `CreateOnlyDefault`:
+
+This will only be used during the creation of the field.  
+But it will be omitted during updates
+
 <b>
 
 ```python
