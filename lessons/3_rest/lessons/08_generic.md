@@ -188,3 +188,81 @@ def get_queryset(self):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 4) Creating Custom Mixins:
+
+
+
+<b>
+
+
+
+```python
+class MultipleFieldLookupMixin:
+
+    def get_object(self):
+        queryset = self.get_queryset()             # Get the base queryset
+        queryset = self.filter_queryset(queryset)  # Apply any filter backends
+        filter = {}
+        for field in self.lookup_fields:
+            if self.kwargs[field]: # Ignore empty fields.
+                filter[field] = self.kwargs[field]
+        obj = get_object_or_404(queryset, **filter)  # Lookup the object
+        self.check_object_permissions(self.request, obj)
+        return obj
+```
+
+
+
+
+
+```python
+class BaseRetrieveView(MultipleFieldLookupMixin,
+        generics.RetrieveAPIView):
+    pass
+
+class BaseRetrieveUpdateDestroyView(MultipleFieldLookupMixin,
+        generics.RetrieveUpdateDestroyAPIView):
+    pass
+```
+
+
+</b>
