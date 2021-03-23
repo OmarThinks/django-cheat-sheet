@@ -93,6 +93,36 @@ def example_view(request, format=None):
 
 
 
+# 2) AnonRateThrottle:
+For ananymous users.
+
+The **`AnonRateThrottle`** will only ever throttle unauthenticated users. The IP address of the incoming request is used to generate a unique key to throttle against.
+
+
+# 3) UserRateThrottle:
+For regestered users. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
