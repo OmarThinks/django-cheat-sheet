@@ -1,4 +1,4 @@
-# 6-5) Serializers: Part 5:
+# 6-5) Serializers:
 
 **Methods and attributes**.
 

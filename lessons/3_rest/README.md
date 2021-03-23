@@ -88,6 +88,14 @@
 </h3>
 
 
+<h3>
+	<a href="lessons/06_serial_7.md">
+
+6-7) Fields' Core Arguments
+	</a>
+</h3>
+
+
 
 
 

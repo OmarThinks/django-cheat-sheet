@@ -1,4 +1,4 @@
-# 6-6) Serializers: Part 6:
+# 6-6) Serializers:
 
 **Fields**.
 
@@ -79,24 +79,8 @@ ImageField(max_length=None, allow_empty_file=False,
 </b>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Please note, that the fields' inputs may change over time, 
+and there are also many details in the fields.  
+So when you need any information about fields, you can 
+always check the usage in the formal documentation of Fields.
 

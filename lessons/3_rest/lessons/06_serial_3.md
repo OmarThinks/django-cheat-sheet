@@ -1,4 +1,4 @@
-# 6-3) Serializers: Part 3:
+# 6-3) Serializers:
 
 **Validation** of serialization.
 

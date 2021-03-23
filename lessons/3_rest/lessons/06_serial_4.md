@@ -1,4 +1,4 @@
-# 6-4) Serializers: Part 4:
+# 6-4) Serializers:
 
 **ModelSerializer**.
 
