@@ -21,8 +21,7 @@ class CustomerReportSerializer(serializers.ModelSerializer):
 
 # 2) Unique:
 
-## 2-1) UniqueValidator:
-
+## 2-1) `UniqueValidator`:
 ### Example:
 <b>
 
@@ -36,12 +35,7 @@ slug = SlugField(
 ```
 </b>
 
-
 ### Parameters:
-
-
-
-
 - **`queryset`** 
 	- **required**
 	- This is the queryset against which uniqueness should be enforced.
@@ -50,6 +44,87 @@ slug = SlugField(
 - **`lookup`**
 	- The lookup used to find an existing instance with the value 
 		being validated. Defaults to `exact`.
+
+
+
+
+
+## 2-2) `UniqueTogetherValidator`:
+### Example:
+<b>
+
+```python
+from rest_framework.validators import UniqueTogetherValidator
+
+class ExampleSerializer(serializers.Serializer):
+    class Meta:
+        validators = [
+            UniqueTogetherValidator(
+                queryset=ToDoItem.objects.all(),
+                fields=['list', 'position']
+            )
+        ]
+```
+</b>
+
+
+
+
+
+
+
+
+
+
+
+
+# 3) Defaults:
+
+
+## 3-1) `CurrentUserDefault`:
+<b>
+
+```python
+owner = serializers.HiddenField(
+	default=serializers.CurrentUserDefault()
+)
+```
+</b>
+
+
+## 3-2) `CreateOnlyDefault`:
+<b>
+
+```python
+created_at = serializers.DateTimeField(
+    default=serializers.CreateOnlyDefault(timezone.now)
+)
+```
+</b>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
