@@ -133,5 +133,18 @@
 
 
 
+<h2>
+	<a href="lessons/08_generic.md">
+		8) GenericView
+	</a>
+</h2>
+
+
+
+
+
+
+
+
 
 
