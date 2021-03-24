@@ -21,3 +21,17 @@
 </h2>
 
 
+
+<h2>
+	<a href="lessons/4_auth/README.md">
+		4) Django REST Framework Authentication
+	</a>
+</h2>
+
+
+
+
+
+
+
+
