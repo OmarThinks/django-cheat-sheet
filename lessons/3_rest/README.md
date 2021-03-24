@@ -45,52 +45,39 @@
 
 <h3>
 	<a href="lessons/06_serial_1.md">
-
 6-1) Serialization and Deserialization
 	</a>
 </h3>
 
 <h3>
 	<a href="lessons/06_serial_2.md">
-
 6-2) With Models
 	</a>
 </h3>
 
 <h3>
 	<a href="lessons/06_serial_3.md">
-
 6-3) Validation
 	</a>
 </h3>
 
 <h3>
 	<a href="lessons/06_serial_4.md">
-
 6-4) ModelSerializer
 	</a>
 </h3>
-
-
 <h3>
 	<a href="lessons/06_serial_5.md">
-
 6-5) Methods and Attributes
 	</a>
 </h3>
-
-
 <h3>
 	<a href="lessons/06_serial_6.md">
-
 6-6) Fields
 	</a>
 </h3>
-
-
 <h3>
 	<a href="lessons/06_serial_7.md">
-
 6-7) Fields' Core Arguments
 	</a>
 </h3>
@@ -150,6 +137,16 @@
 <h2>
 	<a href="lessons/09_throttling.md">
 		9) Throttling
+	</a>
+</h2>
+
+
+
+
+
+<h2>
+	<a href="lessons/10_filtering.md">
+		10) Filtering
 	</a>
 </h2>
 
