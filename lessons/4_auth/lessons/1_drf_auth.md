@@ -14,11 +14,10 @@ you will have prebuilt and tested endpoints.
 
 
 
-# 2) 3rd party auth packages:
+# 2) 3rd party auth package:
 
 
-1. Djoser
-2. SimpleJWT
+**Djoser**
 
 
 

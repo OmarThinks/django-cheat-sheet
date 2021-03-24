@@ -14,11 +14,4 @@
 	</a>
 </h2>
 
-<h2>
-	<a href="lessons/3_simple_jwt.md">
-		3) Simple JWT
-	</a>
-</h2>
-
-
 
