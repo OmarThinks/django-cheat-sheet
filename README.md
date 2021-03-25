@@ -24,7 +24,7 @@
 
 <h2>
 	<a href="lessons/4_auth/README.md">
-		4) Django REST Framework Authentication
+		4) Django REST Framework + Authentication
 	</a>
 </h2>
 
@@ -32,7 +32,7 @@
 
 <h2>
 	<a href="lessons/5_graphql/README.md">
-		5) GraphQL
+		5) GraphQL + Django
 	</a>
 </h2>
 
