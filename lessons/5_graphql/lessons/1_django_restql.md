@@ -60,12 +60,53 @@ INSTALLED_APPS = [
 `tutorial/urls.py`
 ```python
 from django.contrib import admin
-from django.urls import (path, include)
+from django.urls import path, include
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('products/',include("products.urls")),
 ]
 ```
+
+
+`products/views.py`
+```python
+from .models import Product
+from rest_framework import serializers
+from django_restql.mixins import DynamicFieldsMixin
+
+class ProductSerializer(DynamicFieldsMixin, 
+	serializers.ModelSerializer):
+	class Meta:
+		model = Product
+		fields = "__all__"
+
+```
+
+
+
+`products/urls.py`
+```python
+from .views import (ProductSerializer)
+
+```
+
+
+
+
+
+
+Bash
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+winpty python manage.py createsuperuser # For windows OS
+# username: admin, password: admin
+```
+
+
 
 </b>
 
