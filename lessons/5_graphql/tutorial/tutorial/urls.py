@@ -14,47 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('auth/', include('djoser.urls')),
-    path('auth/', include('djoser.urls.jwt')),
 ]
-
-
-"""
-"username": "abc",
-"password": "123abc789"
-"""
-
-
-
-"""
-{
-    "refresh": "
-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYxNjc2OTU0MSwianRpIjoiM2I0MzNlNzEzYzA4NDllMDhlOTE5MmIyM2IwNTI0ZTgiLCJ1c2VyX2lkIjoyfQ.0734x1f1qFb2zr64wU7IsUv4j4qzHo3G1SsP0Ccahzw
-",
-    "access": "
-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2NjgzNDQxLCJqdGkiOiIyNGVjN2RmN2MxZjc0ZmU3OGU4YTg0MTJkZThkZTRhZiIsInVzZXJfaWQiOjJ9.Eo5xjDWWSLY90y1iblch8WvN0exMKbJDlHta6il6Vcc
-"
-}
-"""
-
-"""
-Header
-{
-  "typ": "JWT",
-  "alg": "HS256"
-}
-
-
-Payload
-{
-  "token_type": "access",
-  "exp": 1616683441,
-  "jti": "24ec7df7c1f74fe78e8a8412de8de4af",
-  "user_id": 2
-}
-"""
-
