@@ -262,11 +262,7 @@ Response:
 Request
 
 ```bash
-curl --location --request DELETE 'http://127.0.0.1:8000/graphql/products/6/' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "name": "784213248343"
-}'
+curl --location --request DELETE 'http://127.0.0.1:8000/graphql/products/6/'
 ```
 
 
