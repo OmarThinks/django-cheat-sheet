@@ -51,8 +51,7 @@ class ProductDetails_REST(generics.RetrieveUpdateDestroyAPIView):
 
 
 
-
-
-class ProductViewSet(DynamicFieldsMixin, viewsets.ModelViewSet):
+class Product_GraphQL(DynamicFieldsMixin, viewsets.ModelViewSet):
 	serializer_class = ProductSerializer
 	queryset = Product.objects.all()
+

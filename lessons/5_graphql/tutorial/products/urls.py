@@ -1,6 +1,6 @@
 from .views import (
 	ProductList_REST, ProductDetails_REST,
-	ProductViewSet, ProductViewSet2)
+	Product_GraphQL)
 from django.urls import (path)
 
 """
@@ -10,8 +10,7 @@ from django.urls import (path)
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register('graphql/products/query', ProductViewSet)
-router.register('graphql/products/mutate', ProductViewSet)
+router.register('graphql/products/query', Product_GraphQL)
 urlpatterns= router.urls
 
 
