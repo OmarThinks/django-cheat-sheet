@@ -19,22 +19,14 @@ pip install django-restql
 ```
 </b>
 
-# 3) Example:
+# 3) Example Code:
+
 
 <b>
 
 
-CLI: Bash Commands
-
-```bash
-django-admin startproject tutorial
-cd tutorial
-python manage.py startapp products
-```
-
 
 `products/models.py`
-
 ```python
 from django.db import models
 from django.contrib.auth.models import User
@@ -47,33 +39,14 @@ class Product(models.Model):
 ```
 
 
-```
-tutorial/settings.py
-```
-```python
-INSTALLED_APPS = [
-    ... ,
-    'products'
-]
-```
 
-`tutorial/urls.py`
-```python
-from django.contrib import admin
-from django.urls import path, include
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('products/',include("products.urls")),
-]
-```
 
 
 `products/views.py`
 ```python
 from .models import Product
 from rest_framework import serializers
-from django_restql.mixins import DynamicFieldsMixin
+from django_restql.mixins import (DynamicFieldsMixin)
 
 class ProductSerializer(DynamicFieldsMixin, 
 	serializers.ModelSerializer):
@@ -81,38 +54,33 @@ class ProductSerializer(DynamicFieldsMixin,
 		model = Product
 		fields = "__all__"
 
+from rest_framework import viewsets
+
+class Product_GraphQL(viewsets.ModelViewSet):
+	serializer_class = ProductSerializer
+	queryset = Product.objects.all()
 ```
+
+
 
 
 
 `products/urls.py`
 ```python
-from .views import (ProductSerializer)
+from .views import (Product_GraphQL)
+from rest_framework.routers import DefaultRouter
 
+router = DefaultRouter()
+router.register('graphql/products', Product_GraphQL)
+urlpatterns= router.urls
+
+urlpatterns.extend([
+	# Put here normal urlpatterns
+])
 ```
-
-
-
-
-
-
-Bash
-
-```bash
-python manage.py makemigrations
-python manage.py migrate
-python manage.py createsuperuser
-winpty python manage.py createsuperuser # For windows OS
-# username: admin, password: admin
-```
-
 
 
 </b>
-
-
-
-
 
 
 

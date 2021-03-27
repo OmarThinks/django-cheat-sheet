@@ -4,11 +4,13 @@ from django_restql.mixins import DynamicFieldsMixin
 from rest_framework import viewsets
 from django_restql.mixins import EagerLoadingMixin
 
+
+"""
 class ProductSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Product
 		fields = "__all__"
-
+"""
 
 
 
@@ -51,7 +53,10 @@ class ProductDetails_REST(generics.RetrieveUpdateDestroyAPIView):
 
 
 
-class Product_GraphQL(DynamicFieldsMixin, viewsets.ModelViewSet):
+class Product_GraphQL(viewsets.ModelViewSet):
 	serializer_class = ProductSerializer
 	queryset = Product.objects.all()
+
+
+
 

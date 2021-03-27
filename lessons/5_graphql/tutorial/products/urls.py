@@ -3,14 +3,11 @@ from .views import (
 	Product_GraphQL)
 from django.urls import (path)
 
-"""
-
-"""
 
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register('graphql/products/query', Product_GraphQL)
+router.register('graphql/products', Product_GraphQL)
 urlpatterns= router.urls
 
 
