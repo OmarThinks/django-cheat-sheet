@@ -17,12 +17,10 @@ Serializations.
 ```bash
 pip install django-restql
 ```
-</b>
 
 # 3) Example Code:
 
 
-<b>
 
 
 
@@ -83,7 +81,6 @@ urlpatterns.extend(usual_urlpatterns)
 ```
 
 
-</b>
 
 
 
@@ -98,7 +95,6 @@ urlpatterns.extend(usual_urlpatterns)
 ## 3-1) Getting list of products:
 
 
-<b>
 
 Request
 
@@ -168,7 +164,6 @@ The query is sent as a query parameter.
 
 
 
-
 # 4) Mutation Requests Examples:
 
 
@@ -181,7 +176,6 @@ The query is sent as a query parameter.
 ## 4-1) Adding a Product:
 
 
-<b>
 
 Request
 
@@ -218,7 +212,6 @@ Response:
 ## 4-2) Modifing a Product:
 
 
-<b>
 
 Request
 
@@ -257,7 +250,6 @@ Response:
 ## 4-3) Deleting a product:
 
 
-<b>
 
 Request
 

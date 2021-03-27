@@ -19,7 +19,22 @@ Serializations.
 
 
 <h2>
-		2) Graphene
+	<a href="lessons/1_syntax.md">
+		2) GraphQL Syntax
+	</a>
+</h2>
+
+In the beginning we have explored how to set up a 
+GraphQL server.  
+Now we need to play around with this server.  
+So, let's learn the syntax.
+
+
+
+
+
+<h2>
+		3) Graphene
 </h2>
 
 I will prepare this soon.
@@ -27,7 +42,7 @@ I will prepare this soon.
 
 
 <h2>
-		3) Graphene + Django
+		4) Graphene + Django
 </h2>
 
 I will prepare this soon.
