@@ -212,6 +212,52 @@ Response:
 
 
 
+## 4-2) Modifing a product:
+
+
+<b>
+
+Request
+
+```bash
+curl --location --request PUT 'http://127.0.0.1:8000/graphql/products/6/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "i Phone",
+    "in_stock": false
+}'
+```
+
+
+Response:
+
+
+```json
+{
+    "id": 6,
+    "name": "i Phone",
+    "in_stock": false,
+    "owner": 1
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
