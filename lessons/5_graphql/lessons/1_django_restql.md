@@ -138,7 +138,7 @@ Response:
 Request
 
 ```bash
-curl --location --request GET 'http://127.0.0.1:8000/graphql/products/'
+curl --location -g --request GET 'http://127.0.0.1:8000/graphql/products/?query={id}'
 ```
 
 
@@ -148,20 +148,16 @@ Response:
 ```json
 [
     {
-        "id": 1,
-        "name": "784213248343",
-        "in_stock": true,
-        "owner": 1
+        "id": 1
     },
     {
-        "id": 2,
-        "name": "trbxcty",
-        "in_stock": true,
-        "owner": 1
+        "id": 2
     }
 ]
 ```
 
+
+The query is sent as a query parameter.
 
 
 
