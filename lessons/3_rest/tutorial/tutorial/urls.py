@@ -26,5 +26,4 @@ urlpatterns = [
     path('hello1ViewSet/', hello1ViewSet),
     path('hello2ViewSet/', hello2ViewSet),
     path('products/',include("Products.urls")),
-
 ]
