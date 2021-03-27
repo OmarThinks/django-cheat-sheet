@@ -91,7 +91,7 @@ urlpatterns.extend(usual_urlpatterns)
 
 
 
-# 3) Example Query Requests:
+# 3) Query Requests Examples:
 
 
 
@@ -169,7 +169,7 @@ The query is sent as a query parameter.
 
 
 
-# 4) Example Mutation Requests:
+# 4) Mutation Requests Examples:
 
 
 
