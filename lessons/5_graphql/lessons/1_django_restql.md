@@ -88,7 +88,7 @@ urlpatterns.extend([
 
 
 
-# 3) Example Requests:
+# 3) Example Query Requests:
 
 
 
@@ -133,7 +133,6 @@ Response:
 ## 3-2) Sending a query with products list:
 
 
-<b>
 
 Request
 
@@ -163,6 +162,47 @@ The query is sent as a query parameter.
 
 
 
+
+
+
+
+# 4) Example Mutation Requests:
+
+
+
+
+
+
+
+
+## 4-1) Adding a product:
+
+
+<b>
+
+Request
+
+```bash
+curl --location --request POST 'http://127.0.0.1:8000/graphql/products/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name":"Lab Top",
+    "in_stock":false
+}'
+```
+
+
+Response:
+
+
+```json
+{
+    "id": 6,
+    "name": "Lab Top",
+    "in_stock": false,
+    "owner": 1
+}
+```
 
 
 
