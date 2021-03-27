@@ -74,9 +74,12 @@ router = DefaultRouter()
 router.register('graphql/products', Product_GraphQL)
 urlpatterns= router.urls
 
-urlpatterns.extend([
-	# Put here normal urlpatterns
-])
+
+usual_urlpatterns = [
+	# Put here normal urlpatterns	
+]
+
+urlpatterns.extend(usual_urlpatterns)
 ```
 
 
@@ -175,7 +178,7 @@ The query is sent as a query parameter.
 
 
 
-## 4-1) Adding a product:
+## 4-1) Adding a Product:
 
 
 <b>
@@ -212,7 +215,7 @@ Response:
 
 
 
-## 4-2) Modifing a product:
+## 4-2) Modifing a Product:
 
 
 <b>
@@ -243,6 +246,39 @@ Response:
 
 
 
+
+
+
+
+
+
+
+
+## 4-3) Deleting a product:
+
+
+<b>
+
+Request
+
+```bash
+curl --location --request DELETE 'http://127.0.0.1:8000/graphql/products/6/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "784213248343"
+}'
+```
+
+
+Response:
+
+
+```json
+
+```
+
+
+The response is empty.
 
 
 
