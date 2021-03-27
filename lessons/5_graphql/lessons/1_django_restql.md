@@ -88,6 +88,79 @@ urlpatterns.extend([
 
 
 
+# 3) Example Requests:
+
+
+
+## 3-1) Getting list of products:
+
+
+<b>
+
+Request
+
+```bash
+curl --location --request GET 'http://127.0.0.1:8000/graphql/products/'
+```
+
+
+Response:
+
+
+```json
+[
+    {
+        "id": 1,
+        "name": "784213248343",
+        "in_stock": true,
+        "owner": 1
+    },
+    {
+        "id": 2,
+        "name": "trbxcty",
+        "in_stock": true,
+        "owner": 1
+    }
+]
+```
+
+
+
+
+
+
+
+## 3-2) Sending a query with products list:
+
+
+<b>
+
+Request
+
+```bash
+curl --location --request GET 'http://127.0.0.1:8000/graphql/products/'
+```
+
+
+Response:
+
+
+```json
+[
+    {
+        "id": 1,
+        "name": "784213248343",
+        "in_stock": true,
+        "owner": 1
+    },
+    {
+        "id": 2,
+        "name": "trbxcty",
+        "in_stock": true,
+        "owner": 1
+    }
+]
+```
 
 
 
@@ -103,3 +176,8 @@ urlpatterns.extend([
 
 
 
+
+
+
+
+</b>
