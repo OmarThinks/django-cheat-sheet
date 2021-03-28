@@ -170,6 +170,217 @@ Create some data by going to  http://127.0.0.1:8000/admin/
 
 
 
+# 2) Testing the application:
+
+
+
+http://127.0.0.1:8000/graphql
+
+
+
+<b>
+
+
+
+Request:
+```graphql
+{
+  allIngredients {
+    id
+    name
+  }
+}
+```
+
+
+
+Response:
+
+```json
+{
+  "data": {
+    "allIngredients": [
+      {
+        "id": "1",
+        "name": "Rice"
+      },
+      {
+        "id": "2",
+        "name": "Hot Sause"
+      }
+    ]
+  }
+}
+```
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Request:
+```graphql
+query {
+  categoryByName(name: "Meat") {
+    id
+    name
+    ingredients {
+      id
+      name
+    }
+  }
+}
+```
+
+
+
+Response:
+
+```json
+{
+  "data": {
+    "categoryByName": {
+      "id": "2",
+      "name": "Meat",
+      "ingredients": [
+        {
+          "id": "3",
+          "name": "Cow Meat"
+        },
+        {
+          "id": "4",
+          "name": "Fish"
+        },
+        {
+          "id": "8",
+          "name": "Penguin"
+        }
+      ]
+    }
+  }
+}
+```
+
+---
+
+
+
+
+
+
+
+
+
+
+Request:
+```graphql
+query {
+  allIngredients {
+    id
+    name
+    category {
+      id
+      name
+    }
+  }
+}
+```
+
+
+
+Response:
+
+```json
+{
+  "data": {
+    "allIngredients": [
+      {
+        "id": "1",
+        "name": "Rice",
+        "category": {
+          "id": "3",
+          "name": "Vegan"
+        }
+      },
+      {
+        "id": "2",
+        "name": "Hot Sause",
+        "category": {
+          "id": "1",
+          "name": "Spicy"
+        }
+      }
+    ]
+  }
+}
+```
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</b>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
