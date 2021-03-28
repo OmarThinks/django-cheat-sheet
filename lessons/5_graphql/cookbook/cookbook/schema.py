@@ -1,14 +1,10 @@
+# cookbook/schema.py
 import graphene
 
 class HelloQuery(graphene.ObjectType):
     hello = graphene.String(default_value="Hi!")
 
-
-
-
-# cookbook/schema.py
 from graphene_django import DjangoObjectType
-
 from ingredients.models import Category, Ingredient
 
 class CategoryType(DjangoObjectType):
@@ -24,7 +20,7 @@ class IngredientType(DjangoObjectType):
 class ModelsQuery(graphene.ObjectType):
     all_ingredients = graphene.List(IngredientType)
     category_by_name = graphene.Field(CategoryType, 
-    	name=graphene.String(required=True))
+        name=graphene.String(required=True))
 
     def resolve_all_ingredients(root, info):
         # We can easily optimize query count in the resolve method
@@ -36,25 +32,11 @@ class ModelsQuery(graphene.ObjectType):
         except Category.DoesNotExist:
             return None
 
-
-
-
-
-
-
 class MainQuery(HelloQuery,ModelsQuery, graphene.ObjectType):
     hello = graphene.String(default_value="Hi!")
     # This is the query of the server
     # It inherets from all the queries
     # To form the query that the server will handle
     pass
-
-
-
-
-
-
-
-
 
 schema = graphene.Schema(query=MainQuery)
