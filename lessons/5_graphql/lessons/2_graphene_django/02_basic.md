@@ -58,11 +58,13 @@ class CategoryType(DjangoObjectType):
     class Meta:
         model = Category
         fields = ("id", "name", "ingredients")
+        interfaces = (graphene.relay.Node, )
 
 class IngredientType(DjangoObjectType):
     class Meta:
         model = Ingredient
         fields = ("id", "name", "notes", "category")
+        interfaces = (graphene.relay.Node, )
 
 class ModelsQuery(graphene.ObjectType):
     all_ingredients = graphene.List(IngredientType)
@@ -80,7 +82,6 @@ class ModelsQuery(graphene.ObjectType):
             return None
 
 class MainQuery(HelloQuery,ModelsQuery, graphene.ObjectType):
-    hello = graphene.String(default_value="Hi!")
     # This is the query of the server
     # It inherets from all the queries
     # To form the query that the server will handle
