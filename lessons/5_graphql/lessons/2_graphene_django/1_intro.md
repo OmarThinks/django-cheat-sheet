@@ -96,14 +96,64 @@ schema = graphene.Schema(query=MainQuery)
 </b>
 
 
-In your application there will be lots of small queries.  
+In your application there will be **lots of small queries**.  
 Each query may represent a model.  
 For example:
 - ProductsQuery
 - UsersQuery
 - OrdersQuery
 
-But there is only ony Main query that the server will handle.  
+**But there is only ony Main query that the server will handle.  
 This main query inherts form all the small queries creating the 
-GraphQL server.
+GraphQL server.**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 3) Using Graphql:
+
+
+
+1. Open the server
+2. Open the browers http://127.0.0.1:8000/graphql
+3. Type This code:
+
+<b>
+
+```graphql
+{
+  hello
+}
+```
+</b>
+
+
+
+4. You will get this response:
+
+<b>
+
+```json
+{
+  "data": {
+    "hello": "Hi!"
+  }
+}
+```
+</b>
+
+
+
 
