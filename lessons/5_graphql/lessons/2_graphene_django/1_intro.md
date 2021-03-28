@@ -30,7 +30,10 @@ INSTALLED_APPS = [
 
 GRAPHENE = {
     "SCHEMA": "django_root.schema.schema"
+    # There is another way to declare the schema,
+    # We will explain it in the next code
 }
+
 ```
 </b>
 
@@ -54,9 +57,14 @@ This **`GRAPHENE["SCHEMA"]`** variable in **settings.py** needs
 from django.urls import path
 from graphene_django.views import GraphQLView
 
+from .schema import schema
+
 urlpatterns = [
     # ...
     path("graphql", GraphQLView.as_view(graphiql=True)),
+    # path("graphql", GraphQLView.as_view(graphiql=True,
+    # schema=schema))
+    # This is another way to declare the schema
 ]
 ```
 </b>
