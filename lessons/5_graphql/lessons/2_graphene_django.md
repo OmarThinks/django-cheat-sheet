@@ -9,3 +9,10 @@
 
 
 
+<a href="2_graphene_django/2_basic.md">
+
+## 2) Basic Tutorial:
+</a>
+
+
+
