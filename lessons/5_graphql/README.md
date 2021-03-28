@@ -19,33 +19,14 @@ Serializations.
 
 
 <h2>
-	<a href="lessons/2_syntax.md">
-		2) GraphQL Syntax:
+	<a href="lessons/2_graphene_django.md">
+		2) graphene-django:
 	</a>
 </h2>
 
-In the beginning we have explored how to set up a 
-GraphQL server.  
-Now we need to play around with this server.  
-So, let's learn the syntax.
+This enables you to use graphene with django.
 
 
-
-
-
-<h2>
-		3) Graphene:
-</h2>
-
-I will prepare this soon.
-
-
-
-<h2>
-		4) Graphene + Django:
-</h2>
-
-I will prepare this soon.
 
 
 
