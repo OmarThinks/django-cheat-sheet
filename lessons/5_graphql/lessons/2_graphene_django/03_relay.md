@@ -67,6 +67,98 @@ schema = graphene.Schema(query=MainQuery)
 
 
 
+# 2) Requests and Responses Examples:
+
+
+
+
+
+<b>
+
+Request:
+
+```graphql
+query {
+  allIngredients {
+    edges {
+      node {
+        id,
+        name
+      }
+    }
+  }
+}
+```
+
+Response:
+
+
+```json
+{
+  "data": {
+    "allIngredients": {
+      "edges": [
+        {
+          "node": {
+            "id": "SW5ncmVkaWVudE5vZGU6MQ==",
+            "name": "Rice"
+          }
+        },
+        {
+          "node": {
+            "id": "SW5ncmVkaWVudE5vZGU6Mg==",
+            "name": "Hot Sause"
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+---
+
+
+
+
+
+
+
+
+
+
+
+Request:
+
+```graphql
+query {
+  ingredient(id:"SW5ncmVkaWVudE5vZGU6MQ=="){
+  	id,name
+  }
+}
+```
+
+Response:
+
+
+```json
+{
+  "data": {
+    "ingredient": {
+      "id": "SW5ncmVkaWVudE5vZGU6MQ==",
+      "name": "Rice"
+    }
+  }
+}
+```
+
+
+The `id` is hashed, so you may need to copy it and paste it
+from the request.
+
+
+
+---
 
 
 
@@ -82,9 +174,98 @@ schema = graphene.Schema(query=MainQuery)
 
 
 
+Request:
+
+```graphql
+query {
+  allCategories {
+    edges {
+      node {
+        name,
+        ingredients {
+          edges {
+            node {
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+Response:
+
+
+```json
+{
+  "data": {
+    "allCategories": {
+      "edges": [
+        {
+          "node": {
+            "name": "Meat",
+            "ingredients": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Cow Meat"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "Fish"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "Penguin"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "node": {
+            "name": "Vegan",
+            "ingredients": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Rice"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "Tomato"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "Lemon"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+---
 
 
 
 
 
 
+
+
+
+
+</b>
