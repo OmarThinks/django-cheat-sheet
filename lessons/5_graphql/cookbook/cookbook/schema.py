@@ -96,7 +96,7 @@ class ModelsQuery(graphene.ObjectType):
 
 
 
-class MainQuery(HelloQuery,ModelsQuery, graphene.ObjectType):
+class MainQuery(HelloQuery,ModelsQuery):
     # This is the query of the server
     # It inherets from all the queries
     # To form the query that the server will handle
