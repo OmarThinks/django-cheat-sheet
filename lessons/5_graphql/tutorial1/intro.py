@@ -1,18 +1,3 @@
-# 1) Introduction:
-
-
-# 1) Installing:
-
-<b>
-
-```bash
-pip install graphene
-```
-
-
-# 2) Creating a Simple Schema:
-
-```python
 from graphene import ObjectType, String, Schema
 
 class Query(ObjectType):
@@ -29,15 +14,10 @@ class Query(ObjectType):
         return 'See ya!'
 
 schema = Schema(query=Query)
-```
 
 
 
-# 3) Executing a Query on a Schema:
 
-
-
-```python
 # we can query for our field (with the default argument)
 query_string = '{ hello }'
 result = schema.execute(query_string)
@@ -59,5 +39,5 @@ query_goodbye = '{ goodbye }'
 result = schema.execute(query_goodbye)
 print(result.data["goodbye"])
 # See ya!See ya!
-```
-</b>
+
+
