@@ -19,8 +19,21 @@ Serializations.
 
 
 <h2>
-	<a href="lessons/2_graphene_django.md">
-		2) graphene-django:
+	<a href="lessons/2_graphene.md">
+		2) Graphene
+	</a>
+</h2>
+
+This enables you to use graphene with django.
+
+
+
+
+
+
+<h2>
+	<a href="lessons/3_graphene_django.md">
+		3) graphene-django:
 	</a>
 </h2>
 
