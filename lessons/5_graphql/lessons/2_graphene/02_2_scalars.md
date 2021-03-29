@@ -81,14 +81,18 @@ All these attributes are optional:
 <b>
 
 ```python
-import graphene
-from graphene import ObjectType
-
 class Query(ObjectType):
-    goodbye = graphene.String()
+    # this defines a Field `hello` in our Schema with a single Argument `name`
+    hello = String(name=String(default_value="stranger"))
+    goodbye = String()
+
+    def resolve_hello(root, info, name):
+        return f'Hello {name}!'
 
     def resolve_goodbye(root, info):
         return 'See ya!'
+
+schema = Schema(query=Query)
 ```
 
 
