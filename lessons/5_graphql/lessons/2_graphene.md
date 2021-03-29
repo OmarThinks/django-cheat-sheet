@@ -33,7 +33,7 @@
 
 <a href="2_graphene/02_3_lists.md">
 
-### 2-3) Lists
+### 2-3) Lists and NonNull
 </a>
 
 
