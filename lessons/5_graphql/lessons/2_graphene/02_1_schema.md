@@ -12,7 +12,9 @@ the schema.
 Schemas have components, each component needs to be explianed.  
 So it will take time to understand these components.  
 In this lesson, we will talk beriefly about the components 
-of the schema.
+of the schema.  
+This lesson is like a big picture, to be able to undersdtand 
+where every thing belongs.  
 
 This is a schema example:
 
