@@ -13,4 +13,23 @@
 
 
 
+## 2) Types
+
+
+
+
+
+<a href="2_graphene/02_1_schema.md">
+
+### 2-1) Schema
+</a>
+
+
+
+
+
+
+
+
+
 
