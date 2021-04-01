@@ -30,6 +30,10 @@
 
 
 
+
+<!--
+
+
 <h2>
 	<a href="lessons/5_graphql/README.md">
 		5) GraphQL + Django
@@ -37,7 +41,7 @@
 </h2>
 
 
-
+-->
 
 
 
