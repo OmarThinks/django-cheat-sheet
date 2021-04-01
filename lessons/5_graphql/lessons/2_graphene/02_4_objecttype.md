@@ -39,3 +39,36 @@ class Person(ObjectType):
 
 
 
+
+
+
+
+
+
+
+
+# 4) Resolver Parameters:
+
+## 4-1) Parent Value Object (`parent` or `root`):
+## 4-2) Execution Info:
+## 4-3) GraphQL Arguments (`**kwargs`):
+
+
+
+
+# 5) Convenience Features of Graphene Resolvers:
+
+## 5-1) Implicit staticmethod:
+## 5-2) Default Resolver:
+
+
+
+
+# 6) Advanced:
+
+
+## 6-1) GraphQL Argument defaults:
+## 6-2) Resolvers outside the class:
+## 6-3) Instances as value objects:
+## 6-2) Field camelcasing:
+

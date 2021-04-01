@@ -7,6 +7,16 @@
 
 
 <h2>
+	<a href="lessons/1_graphql.md">
+		1) GraphQL Syntax
+	</a>
+</h2>
+Here we will explore the syntax of GraphQL.
+
+
+
+
+<h2>
 	<a href="lessons/1_django_restql.md">
 		1) django-restql
 	</a>
