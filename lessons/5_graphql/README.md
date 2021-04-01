@@ -2,6 +2,11 @@
 
 
 
+I will not be able to complete this tutorial.  
+I will study from the documentation, and make small projects.  
+No more cheat sheets.
+
+
 
 
 
