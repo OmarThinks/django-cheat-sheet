@@ -7,9 +7,16 @@
 ```bash
 pip install django
 django-admin startproject [project name: Example: mysite]
+cd [project name]
 python manage.py runserver
 
 python manage.py startapp [an app inside the project: example: polls]
+
+
+python manage.py makemigrations
+python manage.py makemigrations [app_name?: optional]
+python manage.py migrate
+python manage.py createsuperuser
 
 ```
 
@@ -43,8 +50,35 @@ urlpatterns = [
 
 ## models.py
 
+```python
+from django.db import models
+
+class Question(models.Model):
+    question_text = models.CharField(max_length=200)
+    pub_date = models.DateTimeField('date published')
+    def __str__(self):
+        return self.question_text
+    def was_published_recently(self):
+        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
 
+class Choice(models.Model):
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    choice_text = models.CharField(max_length=200)
+    votes = models.IntegerField(default=0)
+    def __str__(self):
+        return self.choice_text
+```
+
+
+## installed apps:
+
+```python
+INSTALLED_APPS = [
+    'polls.apps.PollsConfig',
+	...
+]
+```
 
 
 
