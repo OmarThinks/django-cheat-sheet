@@ -71,7 +71,22 @@ class Choice(models.Model):
 ```
 
 
-## installed apps:
+
+## admin.py:
+
+```python
+from django.contrib import admin
+# Register your models here.
+
+from .models import Question
+
+admin.site.register(Question)
+```
+
+
+
+
+## Settings:
 
 ```python
 INSTALLED_APPS = [
@@ -79,6 +94,8 @@ INSTALLED_APPS = [
 	...
 ]
 ```
+
+
 
 
 
