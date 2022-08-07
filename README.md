@@ -1,6 +1,56 @@
 # Django Cheat Sheet
 
 
+## CLI:
+
+
+```bash
+pip install django
+django-admin startproject [project name: Example: mysite]
+python manage.py runserver
+
+python manage.py startapp [an app inside the project: example: polls]
+
+```
+
+
+
+
+## views.py:
+
+```python
+from django.http import HttpResponse
+
+
+def index(request):
+    return HttpResponse("Hello, world. You're at the polls index.")
+```
+
+
+
+## urls.py:
+
+```python
+from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+    path('polls/', include('polls.urls')),
+    path('admin/', admin.site.urls),
+]
+```
+
+
+## models.py
+
+
+
+
+
+
+
+
+
 
 
 
