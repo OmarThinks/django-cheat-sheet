@@ -1,6 +1,16 @@
 # Django Cheat Sheet
 
 
+
+
+
+
+
+
+<!--
+
+
+
 <h2>
 	<a href="lessons/1_django/README.md">
 		1) Django
@@ -28,7 +38,7 @@
 	</a>
 </h2>
 
-
+-->
 
 
 <!--
